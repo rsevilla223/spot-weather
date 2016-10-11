@@ -1,0 +1,58 @@
+
+
+
+/*sidebar styles begin here*/
+
+body {
+    margin: 0;
+		background-color: #1f2122
+}
+
+.sidebar {
+list-style-type: none;
+margin: 0;
+padding: 0;
+width: 25%;
+background-color: #22242c;
+position: fixed;
+height: 100%;
+overflow: auto;
+}
+.sidebar.collapsed {
+    max-width: 0;
+    overflow: hidden;
+}
+
+.mainbar {
+	  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+		height:50px;
+
+}
+
+header {
+	margin-left: 40%;
+}
+
+.mainbar .home_logo {
+	padding: -30px;
+	text-align: center;
+}
+
+.test_box {
+	  background-color: lightgrey;
+    width: 100%;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+
+}
+
+list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
