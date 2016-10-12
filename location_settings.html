@@ -13,12 +13,6 @@
 <div class="toggle">
 	<button class="button" onclick="document.getElementsByClassName('sidebar')[0].classList.toggle('collapsed')"></button>
 </div>
-<div class="login">
-	<ul>
-		<li><a href="#">Login</a></li>
-		<li><a href="#">Sign up</a></li>
-	</ul>
-</div>
 <div class="mainbar">
 	<h1><a class="home_logo" href="index.html">WeatherSpot</a></h1>
 </div>
@@ -34,7 +28,7 @@
 		</div>
 		<ul class="sidenav">
 			<li><a href="my_info.html">My Info</a></li>
-			<li><a href="settings.html">Settings</a></li>
+			<li><a class="active" href="settings.html">Settings</a></li>
 		</ul>
 	</div>
     <!--<div class="content">
@@ -43,7 +37,13 @@
 </div>
 
 <div class="test_box"><!--This text is the actual content of the box. We have added a 25px padding, 25px margin and a 25px green border.-->
-<h2>Welcome to WeatherSpot, the app where you can listen to a curated Spotify playlist based on the current weather!</h2>
+<h2>Location Settings</h2>
+	<ul class="settings_list" id="settings_list">
+		<li><a href="#">Chicago, IL</a></li>
+		<li><a href="#">Novi, MI</a></li>
+		<li><a href="#">Appleton, WI</a></li>
+		<li><a href="#">Add a new location</a></li>
+	</ul>
 </div>
 
 <script>
