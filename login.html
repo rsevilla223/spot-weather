@@ -10,8 +10,16 @@
 
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div class="toggle">
-	<button class="toggle_button" onclick="document.getElementsByClassName('sidebar')[0].classList.toggle('collapsed')"></button>
+	<button class="button" onclick="document.getElementsByClassName('sidebar')[0].classList.toggle('collapsed')"></button>
 </div>
 <div class="login">
 	<ul>
@@ -43,7 +51,14 @@
 </div>
 
 <div class="test_box"><!--This text is the actual content of the box. We have added a 25px padding, 25px margin and a 25px green border.-->
-<h2>Welcome to WeatherSpot, the app where you can listen to a curated Spotify playlist based on the current weather!</h2>
+<h2>Login</h2>
+	<div id="fb-root"></div>
+<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+	<form action="demo_form.asp">
+		Username: <input type="text" name="UserName"><br>
+		Password: <input type="text" name="Password"><br>
+	<input type="submit" value="Submit">
+</form>
 </div>
 
 <script>
