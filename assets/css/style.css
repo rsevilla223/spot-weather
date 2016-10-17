@@ -12,8 +12,8 @@ body {
 list-style-type: none;
 margin: 0;
 padding: 0;
-width: 25%;
-background-color: #22242c;
+width: 192px;
+background-color: #252525;
 position: fixed;
 height: 100%;
 overflow: auto;
@@ -23,6 +23,44 @@ overflow: auto;
     overflow: hidden;
 }
 
+.profile_pane {
+  margin: 0;
+  padding: 0;
+  width: 192px;
+  background-color: #505050;
+  position: fixed;
+  height: 175px;
+}
+
+.profile_pane.collapsed {
+    max-width: 0;
+    overflow: hidden;
+}
+
+.profile_picture {
+  position: relative;
+  height: 80px;
+  margin-top: 10px;
+  margin-left: 57px;
+}
+
+.menu_options {
+  position: absolute;
+  color:green;
+  padding-top: 179px;
+}
+
+.sidebar.profile_pane.collapsed {
+    max-width: 0;
+    overflow: hidden;
+}
+
+.mainbar .hamburger_menu {
+  height: 60%;
+  padding-left: 5px;
+  padding-top: 10px;
+}
+
 .mainbar {
 	  list-style-type: none;
     margin: 0;
@@ -30,7 +68,6 @@ overflow: auto;
     overflow: hidden;
     background-color: #333;
 		height:50px;
-
 }
 
 header {
@@ -38,8 +75,20 @@ header {
 }
 
 .mainbar .home_logo {
-	padding: -30px;
-	text-align: center;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 30px;
+  padding-top: 13px;
+
+}
+
+.user_info {
+  text-align: center;
+  color: #d0d0d0;
+  padding: 5px;
 }
 
 .test_box {
@@ -48,15 +97,8 @@ header {
     border: 25px solid green;
     padding: 25px;
     margin: 25px;
-
 }
 
 .temperature {
   color: white;
 }
-
-list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;

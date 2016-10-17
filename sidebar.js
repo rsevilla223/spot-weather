@@ -1,4 +1,4 @@
-$('#menu').css("left","-300px");
+/*$('#menu').css("left","-300px");
 	$('.menu_icon').on('click',function(){
 		if($('.menu_icon').hasClass('open')){
 			$(this).removeClass('open');
@@ -27,4 +27,4 @@ $('#menu').css("left","-300px");
 			});
 
 		}
-	});
+	});*/
