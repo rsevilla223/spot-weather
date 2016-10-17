@@ -49,6 +49,7 @@ function(err, data) {
   htmlText += "<p class='temperature'>Current Temp in " + data.name + ": " + data.main.temp + "</p>";
   htmlText += "<p class='temperature'>Current Forecast in "+ data.name +": " + data.weather[0].main + "</p>";
   htmlText += "<p class='temperature'>" + forecast_sentence + "</p>";
+  htmlText += "</div>";
 
-  $('body').append(htmlText);
+  $('.weather_container').append(htmlText);
 });
