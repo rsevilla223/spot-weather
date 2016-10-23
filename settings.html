@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SpotWeather</title>
+	<!-- metadata -->
+	<meta charset="UTF-8">
+	<!-- css styles -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Catamaran:200|Raleway|Source+Sans+Pro:200" rel="stylesheet">
+
+	<!-- plugins -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+
+<body>
+<div class="mainbar">
+<input type="image" class="hamburger_menu" onclick="document.getElementsByClassName('sidebar')[0].classList.toggle('collapsed');document.getElementsByClassName('profile_pane')[0].classList.toggle('collapsed')" src="media/images/hamburger_button.svg" />
+<a href="index.html"><img class = "home_logo" src="media/images/spotweatherlogo.svg"></a>
+</div>
+
+
+<div class="container">
+    <div class="sidebar" id="sidebar">
+			<div class="profile_pane">
+				<img class="profile_picture" src="media/images/man.svg">
+				<div class="user_info">
+					<li>Ryan Sevilla</li>
+					<li style="font-size:10pt">Chicago, IL</li>
+				</div>
+
+			</div>
+
+			<div class="menu_options">
+				<li><a href="my_info.html">My Info</a></li>
+				<li><a class="active" href="settings.html">Settings</a></li>
+			</div>
+		</div>
+</div>
+
+<div class="settings">
+	<h1>Settings</h1>
+	<ul>
+		<li class="list-category">Units</li>
+			<li class="sub-list">Sample
+				<!-- Rounded switch -->
+				<label class="switch">
+				<input type="checkbox">
+				<div class="slider round"></div>
+				</label>
+			</li>
+			<li class="sub-list">Sample
+				<label class="switch">
+				<input type="checkbox">
+				<div class="slider round"></div>
+				</label>
+			</li>
+			<li class="sub-list">Sample
+				<label class="switch">
+				<input type="checkbox">
+				<div class="slider round"></div>
+				</label>
+			</li>
+		<li class="list-category">Location Settings
+			<li class="location-setting">Chicago, IL
+				<button class="delete-button">&#10006</button>
+			</li>
+			<li class="location-setting">Indianapolis, IN
+				<button class="delete-button">&#10006</button>
+			</li>
+			<li class="location-setting">Detroit, MI
+				<button class="delete-button">&#10006</button>
+			</li>
+			<li class="location-setting">Add a new location
+				<button class="plus-button">&#10010</button>
+			</li>
+		</li>
+		<li class="list-category">Spotify</li>
+			<li class="sub-list">Sample
+				<label class="switch">
+				<input type="checkbox">
+				<div class="slider round"></div>
+				</label>
+			</li>
+			<li class="sub-list">Sample
+				<label class="switch">
+				<input type="checkbox">
+				<div class="slider round"></div>
+				</label>
+			</li>
+			<li class="sub-list">Sample
+				<label class="switch">
+				<input type="checkbox">
+				<div class="slider round"></div>
+				</label>
+			</li>
+		<li class="list-category">Alerts</li>
+			<li class="sub-list">Sample
+				<label class="switch">
+				<input type="checkbox">
+				<div class="slider round"></div>
+				</label>
+			</li>
+			<li class="sub-list">Sample
+				<label class="switch">
+				<input type="checkbox">
+				<div class="slider round"></div>
+				</label>
+			</li>
+			<li class="sub-list">Sample
+				<label class="switch">
+				<input type="checkbox">
+				<div class="slider round"></div>
+				</label>
+			</li>
+	</ul>
+</div>
+
+
+</body>
+
+</html>
