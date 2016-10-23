@@ -1,33 +1,33 @@
-
-
-
-/*sidebar styles begin here*/
-
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
 		background-color: #1f2122
 }
 
+/*splash screen styles*/
 .splash_screen {
-  background: url("https://static.pexels.com/photos/1227/night-dark-blur-blurred.jpg");
+	display: block;
+	margin-top: 100px;
+	margin: auto;
 }
 
 .splash_logo {
-  height: 100px;
-  position: fixed;
-  top: 100px;
-  left: 450;
+	padding: 10% 0% 3%;
+	height: 100px;
+	display: block;
+	margin: auto;
 }
 
 .splash_body{
   color: white;
+  background: url("https://static.pexels.com/photos/1227/night-dark-blur-blurred.jpg");
 }
 
 input[type=text] {
     width: 20%;
     padding: 12px 20px;
-    margin: 8px 0;
+	display: block;
+    margin: auto;
     box-sizing: border-box;
     border: none;
     background-color: #3c9ebc;
@@ -36,18 +36,16 @@ input[type=text] {
 }
 
 .tagline {
-  position: fixed;
-  left: 560px;
-  top: 211px;
+  text-align: center;
 }
 
 .footer{
   position: fixed;
-  top: 450px;
+  margin-top: 5%;
   font-size: 30pt;
   text-align: center;
-  right: 100px;
-  left: 100px;
+  right: 15%;
+  left: 15%;
 }
 
 input[type=submit] {
@@ -57,23 +55,22 @@ input[type=submit] {
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: auto;
     cursor: pointer;
-    position: absolute;
-    left: 69px;
     border-radius: 5px;
 }
 
 .zipForm {
   position: fixed;
-  left: 540px;
-  top: 250px;
+  padding: 0% 0%;
   width: 100%;
+  display: block;
+  margin: auto;
 }
 
-
+/*sidebar styles begin here*/
 .sidebar {
 list-style-type: none;
 margin: 0;
@@ -181,12 +178,175 @@ li a:hover:not(.active) {
 }
 
 .weather_container {
-	  background-color: rgba(97, 97, 97, 0.13);
-    width: 100%;
+	background-color: rgba(97, 97, 97, 0.13);
+    width: 98%;
     text-align: center;
     border-radius: 10px;
+	margin: auto;
 }
 
 .temperature {
   color: white;
+}
+
+/*settings list*/
+.settings {
+	background-color: rgba(97, 97, 97, 0.13);
+    width: 98%;
+    text-align: center;
+    border-radius: 10px;
+	margin: auto;
+}
+
+h1 {
+	color: white;
+	font-family: 'Source Sans Pro', sans-serif;
+	padding: 10px 0%;
+}
+
+.settings ul {
+	list-style-type: none;
+	padding: 0%;
+}
+
+.sub-list {
+	color: gray;
+	padding: 6px 7px 6px 20px;
+	text-decoration: none;
+	text-align: left;
+}
+
+.location-setting {
+	color: gray;
+	padding: 6px 14px 6px 20px;
+	text-decoration: none;
+	text-align: left;
+}
+
+.list-category {
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	text-align: left;
+	border-bottom: 1px solid gray;
+}
+
+/*toggle switch settings begin here*/
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 43px;
+  height: 17px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #3c9ebc;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*plus-button styling*/
+.plus-button {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 0px 5px .7px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+	border-radius: 50%;
+	float: right;
+	cursor: pointer;
+}
+
+.plus-button:hover {
+	background-color: #3c9ebc;
+    border: none;
+    color: white;
+    padding: 0px 5px .7px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+	border-radius: 50%;
+	float: right;
+	cursor: pointer;
+}
+
+/*delete-button styling*/
+.delete-button {
+    background-color: gray;
+    border: none;
+    color: white;
+	padding: 0px 5px .7px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+	border-radius: 50%;
+	float: right;
+	cursor: pointer;
+}
+
+.delete-button:hover {
+	background-color: #990033;
+    border: none;
+    color: white;
+    padding: 0px 5px .7px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+	border-radius: 50%;
+	float: right;
+	cursor: pointer;
 }
