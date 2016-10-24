@@ -1,30 +1,4 @@
-/*$('#menu').css("left","-300px");
-	$('.menu_icon').on('click',function(){
-		if($('.menu_icon').hasClass('open')){
-			$(this).removeClass('open');
-			$(this).animate({
-				"left":"20px",
-				"background-position":"0px"
-			});
-			$('#menu').animate({"left":"-300px"});
-			$('body').css("position","absolute");
-			$('body').animate({
-				"left":"0px",
-				"z-index":"999"
-			});
-		}
-		else{
-			$(this).addClass('open');
-			$(this).animate({
-				"left":"310px",
-				"background-position":"-40px"
-			});
-			$('#menu').animate({"left":"0px"});
-			$('body').css("position","absolute");
-			$('body').animate({
-				"left":"300px",
-				"z-index":"999"
-			});
-
-		}
-	});*/
+$('.nav-side .nav-toggle').on('click', function(e) {
+  e.preventDefault();
+  $(this).parent().toggleClass('nav-open');
+});
