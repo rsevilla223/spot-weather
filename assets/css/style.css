@@ -5,24 +5,28 @@ body {
 }
 
 .splash_screen {
-  background: url("https://static.pexels.com/photos/1227/night-dark-blur-blurred.jpg");
+  display: block;
+  margin-top: 100px;
+  margin: auto;
 }
 
 .splash_logo {
+  padding: 10% 0% 3%;
   height: 100px;
-  position: fixed;
-  top: 100px;
-  left: 450;
+  display: block;
+  margin: auto;
 }
 
 .splash_body{
   color: white;
+  background: url("https://static.pexels.com/photos/1227/night-dark-blur-blurred.jpg");
 }
 
 input[type=text] {
     width: 20%;
     padding: 12px 20px;
-    margin: 8px 0;
+    display: block;
+    margin: auto;
     box-sizing: border-box;
     border: none;
     background-color: #3c9ebc;
@@ -32,11 +36,11 @@ input[type=text] {
 
   .footer{
   position: fixed;
-  top: 450px;
+  margin-top: 5%;
   font-size: 30pt;
   text-align: center;
-  right: 100px;
-  left: 100px;
+  right: 15%;
+  left: 15%;
 }
 
 input[type=submit] {
@@ -46,20 +50,19 @@ input[type=submit] {
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: auto;
     cursor: pointer;
-    position: absolute;
-    left: 69px;
     border-radius: 5px;
 }
 
 .zipForm {
   position: fixed;
-  left: 540px;
-  top: 250px;
+  padding: 0% 0%;
   width: 100%;
+  display: block;
+  margin: auto;
 }
 
 
@@ -80,9 +83,7 @@ font-family: 'Source Sans Pro', sans-serif;
 }
 
 .tagline {
-  position: fixed;
-  left: 560px;
-  top: 211px;
+  text-align: center;
 }
 
 .profile_pane {
