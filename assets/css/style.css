@@ -1,7 +1,82 @@
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
-		background-color: #f2f2f2
+		background-color: #1f2122
+}
+
+.splash_screen {
+  background: url("https://static.pexels.com/photos/1227/night-dark-blur-blurred.jpg");
+}
+
+.splash_logo {
+  height: 100px;
+  position: fixed;
+  top: 100px;
+  left: 450;
+}
+
+.splash_body{
+  color: white;
+}
+
+input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3c9ebc;
+    color: white;
+    text-align: center;
+  }
+
+  .footer{
+  position: fixed;
+  top: 450px;
+  font-size: 30pt;
+  text-align: center;
+  right: 100px;
+  left: 100px;
+}
+
+input[type=submit] {
+    background-color: #27333c;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    left: 69px;
+    border-radius: 5px;
+}
+
+.zipForm {
+  position: fixed;
+  left: 540px;
+  top: 250px;
+  width: 100%;
+}
+
+
+.sidebar {
+list-style-type: none;
+margin: 0;
+padding: 0;
+width: 192px;
+background-color: #252525;
+position: fixed;
+height: 100%;
+overflow: auto;
+font-family: 'Source Sans Pro', sans-serif;
+}
+.sidebar.collapsed {
+    max-width: 0;
+    overflow: hidden;
 }
 
 .tagline {
@@ -113,6 +188,7 @@ li a:hover:not(.active) {
 }
 
 .weather_container {
+    background-color: rgba(97, 97, 97, 0.13);
     position: absolute;
     text-align: center;
     line-height: 40px;
@@ -123,7 +199,7 @@ li a:hover:not(.active) {
     left: 30%;
     width: 40%;
     height: 200px;
-    background: #0066ff;
+
     color: #ffffff;
     border-radius: 20px;
 }
