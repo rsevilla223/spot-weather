@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SpotWeather</title>
+	<!-- metadata -->
+	<meta charset="UTF-8">
+	<!-- css styles -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Catamaran:200|Raleway|Source+Sans+Pro:200" rel="stylesheet">
+
+	<!-- plugins -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+
+<body>
+<div class="mainbar">
+<input type="image" class="hamburger_menu" onclick="document.getElementsByClassName('sidebar')[0].classList.toggle('collapsed');document.getElementsByClassName('profile_pane')[0].classList.toggle('collapsed')" src="media/images/hamburger_button.svg" />
+<a href="index.html"><img class = "home_logo" src="media/images/spotweatherlogo.svg"></a>
+</div>
+
+
+<div class="container">
+    <div class="sidebar" id="sidebar">
+			<div class="profile_pane">
+				<img class="profile_picture" src="media/images/man.svg">
+				<div class="user_info">
+					<li>Ryan Sevilla</li>
+					<li style="font-size:10pt">Chicago, IL</li>
+				</div>
+
+			</div>
+
+			<div class="menu_options">
+				<li><a class="active" href="my_info.html">My Info</a></li>
+				<li><a href="settings.html">Settings</a></li>
+			</div>
+		</div>
+</div>
+
+<div class="settings">
+	<h1>My Info</h1>
+</div>
+</body>
+
+</html>
