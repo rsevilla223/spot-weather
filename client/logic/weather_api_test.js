@@ -42,7 +42,7 @@ function(err, data) {
   }
 
   var htmlText = '';
-  
+
 //Here we basically create HTML elements to be added to the page by appending them
 //to one string and then convert this string to HTML and add it to the body by using the append function in jQuery
   htmlText += "<div class='weather_display'>";
