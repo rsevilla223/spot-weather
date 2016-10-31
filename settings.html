@@ -47,39 +47,39 @@
 	<h1>Settings</h1>
 	<ul>
 		<li class="list-category">Units</li>
-			<li class="sub-list">Sample
-				<!-- Rounded switch -->
-				<label class="switch">
-				<input type="checkbox">
-				<div class="slider round"></div>
-				</label>
-			</li>
-			<li class="sub-list">Sample
-				<label class="switch">
-				<input type="checkbox">
-				<div class="slider round"></div>
-				</label>
-			</li>
-			<li class="sub-list">Sample
-				<label class="switch">
-				<input type="checkbox">
-				<div class="slider round"></div>
-				</label>
-			</li>
-		<li class="list-category">Location Settings
-			<li class="location-setting">Chicago, IL
+			<ul>
+				<li class="sub-list">Sample
+					<!-- Rounded switch -->
+					<label class="switch">
+					<input type="checkbox">
+					<div class="slider round"></div>
+					</label>
+				</li>
+				<li class="sub-list">Sample
+					<label class="switch">
+					<input type="checkbox">
+					<div class="slider round"></div>
+					</label>
+				</li>
+				<li class="sub-list">Sample
+					<label class="switch">
+					<input type="checkbox">
+					<div class="slider round"></div>
+					</label>
+				</li>
+			</ul>
+		<li class="list-category">Location Settings</li>
+			<!--<li class="location-input">
 				<button class="delete-button">&#10006</button>
-			</li>
-			<li class="location-setting">Indianapolis, IN
-				<button class="delete-button">&#10006</button>
-			</li>
-			<li class="location-setting">Detroit, MI
-				<button class="delete-button">&#10006</button>
-			</li>
-			<li class="location-setting">Add a new location
-				<button class="plus-button">&#10010</button>
-			</li>
-		</li>
+			</li>-->
+			<ul class="location-settings" id="location-settings">
+				<li class="add-location" id="locationAdd">
+					Add a new location<button class="plus-button">&#10010</button>
+					
+					<input type="text" name="zipBox" class="zipBox" id="zipBox" name="enteredZipcode" placeholder="Enter your zipcode"/>
+					
+				</li>
+			</ul>
 		<li class="list-category">Spotify</li>
 			<li class="sub-list">Sample
 				<label class="switch">
@@ -122,9 +122,9 @@
 </div>
 
 
-		<script src="weather_api_test.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="sidebar.js"></script>
+		<script src="assets\scripts\location_settings.js"></script>
 	</body>
 
 
