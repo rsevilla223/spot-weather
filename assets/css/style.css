@@ -136,14 +136,13 @@ header {
 }
 
 .mainbar .home_logo {
-  position: fixed;
+	position: relative;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   height: 30px;
   padding-top: 13px;
-
 }
 
 .user_info {
