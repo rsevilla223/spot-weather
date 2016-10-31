@@ -81,29 +81,8 @@ function(err, data) {
 
   $('.location-settings').append(htmlText);
 });
-   /* //conditional check for input field
-    if ($location_text.val() !== "") {
-    //set content for note
-    $location.html($location_text.val());
-    //hide new note to setup fadeIn...
-    $location.hide();
-    //append note text to note-output
-    $(".location-settings").append($location);
-    //fadeIn hidden new note
-    $location.fadeIn("slow");
-    $location_text.val("");
-    checkVisible($(".delete-button"));
-    } */
   };
  
-  
-/*  $(".delete-button").on("click", function() {
-   $(this).parent().remove();
-});
-*/
-  
-
-
 
 };
 
