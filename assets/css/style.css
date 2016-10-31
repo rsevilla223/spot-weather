@@ -189,7 +189,6 @@ li a:hover:not(.active) {
 
 .weather_container {
     background-color: rgba(97, 97, 97, 0.13);
-    position: absolute;
     text-align: center;
     line-height: 40px;
     vertical-align: middle;
@@ -199,7 +198,7 @@ li a:hover:not(.active) {
     left: 30%;
     width: 40%;
     height: 200px;
-
+	margin: auto;
     color: #ffffff;
     border-radius: 20px;
 }
