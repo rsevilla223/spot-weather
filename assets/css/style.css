@@ -136,14 +136,13 @@ header {
 }
 
 .mainbar .home_logo {
-  position: fixed;
+	position: relative;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   height: 30px;
   padding-top: 13px;
-
 }
 
 .user_info {
@@ -190,7 +189,6 @@ li a:hover:not(.active) {
 
 .weather_container {
     background-color: rgba(97, 97, 97, 0.13);
-    position: absolute;
     text-align: center;
     line-height: 40px;
     vertical-align: middle;
@@ -200,7 +198,7 @@ li a:hover:not(.active) {
     left: 30%;
     width: 40%;
     height: 200px;
-
+	margin: auto;
     color: #ffffff;
     border-radius: 20px;
 }
@@ -288,7 +286,14 @@ h1 {
 	text-align: left;
 }
 
-.location-setting {
+.location-input {
+	color: gray;
+	padding: 6px 14px 6px 20px;
+	text-decoration: none;
+	text-align: left;
+}
+
+.add-location {
 	color: gray;
 	padding: 6px 14px 6px 20px;
 	text-decoration: none;
@@ -304,6 +309,12 @@ h1 {
 	border-bottom: 1px solid gray;
 }
 
+.location-settings {
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+	text-align: left;
+}
 /*toggle switch settings begin here*/
 /* The switch - the box around the slider */
 .switch {
@@ -364,6 +375,29 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+/*add location form*/
+.add-location p {
+	padding: 0;
+	float: left;
+	margin: 0;
+	color: gray;
+	text-align: left;
+}
+
+.add-location input[type=text] {
+    width: 18%;
+    padding: 8px 20px;
+	margin-right: 10px;
+	float: right;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3c9ebc;
+    color: white;
+    text-align: center;
+	visibility: hidden;
+ }
+
+
 
 /*plus-button styling*/
 .plus-button {

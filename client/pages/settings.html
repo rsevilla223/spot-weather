@@ -1,80 +1,85 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>SpotWeather</title>
-	<!-- metadata -->
-	<meta charset="UTF-8">
-	<!-- css styles -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Catamaran:200|Raleway|Source+Sans+Pro:200" rel="stylesheet">
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WeatherSpot - Settings</title>
 
-	<!-- plugins -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-</head>
+		<!-- This HTML 5 tag assists the scaling for responsiveness -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<link rel="stylesheet" href="../../assets/css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Catamaran:600|Raleway|Source+Sans+Pro:200" rel="stylesheet">
 
-<body>
-<div class="mainbar">
-<input type="image" class="hamburger_menu" onclick="document.getElementsByClassName('sidebar')[0].classList.toggle('collapsed');document.getElementsByClassName('profile_pane')[0].classList.toggle('collapsed')" src="media/images/hamburger_button.svg" />
-<a href="index.html"><img class = "home_logo" src="media/images/spotweatherlogo.svg"></a>
-</div>
+		<!-- plugin for weather API -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
 
 
-<div class="container">
-    <div class="sidebar" id="sidebar">
-			<div class="profile_pane">
-				<img class="profile_picture" src="media/images/man.svg">
-				<div class="user_info">
-					<li>Ryan Sevilla</li>
-					<li style="font-size:10pt">Chicago, IL</li>
-				</div>
+	<body>
 
+		<nav class="nav-side">
+			<a href="#" class="nav-toggle"></a>
+			<div class="container">
+				<!-- removed div class sidebar and id sidebar-->
+						<div class="profile_pane">
+							<img class="profile_picture" src="../../media/images/man.svg">
+							<div class="user_info">
+								<li>Noah</li>
+								<li style="font-size:10pt">Mount Ararat</li>
+							</div>
+
+						</div>
+
+						<div class="menu_options">
+							<li><a href="my_info.html">My Info</a></li>
+							<li><a class="active" href="settings.html">Settings</a></li>
+						</div>
+					</div>
 			</div>
+		</nav>
 
-			<div class="menu_options">
-				<li><a href="my_info.html">My Info</a></li>
-				<li><a class="active" href="settings.html">Settings</a></li>
-			</div>
+		<div class="mainbar">
+			<!--<li class="home_logo"><a href="#home">WeatherSpot</a></li>-->
+			<a href="index.html"><img class = "home_logo" src="../../media/images/spotweatherlogo.svg"></a>
 		</div>
-</div>
 
-<div class="settings">
+		<div class="settings">
 	<h1>Settings</h1>
 	<ul>
 		<li class="list-category">Units</li>
-			<li class="sub-list">Sample
-				<!-- Rounded switch -->
-				<label class="switch">
-				<input type="checkbox">
-				<div class="slider round"></div>
-				</label>
-			</li>
-			<li class="sub-list">Sample
-				<label class="switch">
-				<input type="checkbox">
-				<div class="slider round"></div>
-				</label>
-			</li>
-			<li class="sub-list">Sample
-				<label class="switch">
-				<input type="checkbox">
-				<div class="slider round"></div>
-				</label>
-			</li>
-		<li class="list-category">Location Settings
-			<li class="location-setting">Chicago, IL
+			<ul>
+				<li class="sub-list">Sample
+					<!-- Rounded switch -->
+					<label class="switch">
+					<input type="checkbox">
+					<div class="slider round"></div>
+					</label>
+				</li>
+				<li class="sub-list">Sample
+					<label class="switch">
+					<input type="checkbox">
+					<div class="slider round"></div>
+					</label>
+				</li>
+				<li class="sub-list">Sample
+					<label class="switch">
+					<input type="checkbox">
+					<div class="slider round"></div>
+					</label>
+				</li>
+			</ul>
+		<li class="list-category">Location Settings</li>
+			<!--<li class="location-input">
 				<button class="delete-button">&#10006</button>
-			</li>
-			<li class="location-setting">Indianapolis, IN
-				<button class="delete-button">&#10006</button>
-			</li>
-			<li class="location-setting">Detroit, MI
-				<button class="delete-button">&#10006</button>
-			</li>
-			<li class="location-setting">Add a new location
-				<button class="plus-button">&#10010</button>
-			</li>
-		</li>
+			</li>-->
+			<ul class="location-settings" id="location-settings">
+				<li class="add-location" id="locationAdd">
+					Add a new location<button class="plus-button">&#10010</button>
+
+					<input type="text" name="zipBox" class="zipBox" id="zipBox" name="enteredZipcode" placeholder="Enter your zipcode"/>
+
+				</li>
+			</ul>
 		<li class="list-category">Spotify</li>
 			<li class="sub-list">Sample
 				<label class="switch">
@@ -117,6 +122,10 @@
 </div>
 
 
-</body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="../../client/logic/sidebar.js"></script>
+		<script src="../../client/logic/location_settings.js"></script>
+	</body>
+
 
 </html>
