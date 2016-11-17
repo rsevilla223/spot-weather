@@ -53,3 +53,38 @@ function(err, data) {
 
   $('.weather_container').append(htmlText);
 });
+
+//get 5 day forecast
+getJSON("http://api.openweathermap.org/data/2.5/forecast?zip="+zipcode+",us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
+function(err, data) {
+  console.log(data);
+
+
+  var temps = [];
+  var largest = 0;
+  var temptotal;
+  var count;
+  console.log(data.list.length);
+  for(var i=0;i<data.list.length;i++){
+
+    if (data.list[i].dt_txt.substring(8,10) > largest || i+1 == data.list.length){
+      largest = data.list[i].dt_txt.substring(8,10);
+      console.log("Total temp is " + temptotal/count);
+      if (temptotal > 0){
+        temps.push(temptotal/count);
+      }
+      temptotal = 0;
+      count = 0;
+
+    }
+
+    temptotal += data.list[i].main.temp;
+    count++;
+
+
+
+    console.log("The temp for " + data.list[i].dt_txt.substring(8,10) + " is " + data.list[i].main.temp);
+  }
+
+  console.log(temps);
+})
