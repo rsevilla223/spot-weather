@@ -1,7 +1,9 @@
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
-		background-color: #f2f2f2
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+		background: #252525;
 }
 
 .tagline {
@@ -53,6 +55,8 @@ body {
 		height:50px;
     width: 100%;
     left: 0px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
+
 }
 
 header {
@@ -60,7 +64,7 @@ header {
 }
 
 .mainbar .home_logo {
-  position: fixed;
+  position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -115,17 +119,22 @@ li a:hover:not(.active) {
 .weather_container {
     position: absolute;
     text-align: center;
-    line-height: 40px;
+    line-height: 20px;
     vertical-align: middle;
     top: 10%;
     bottom: auto;
     right: 0px;
     left: 30%;
     width: 40%;
-    height: 200px;
-    background: #0066ff;
+    height: 250px;
+    background: #076aed;
     color: #ffffff;
-    border-radius: 20px;
+    border-radius: 10px;
+}
+
+.weather_container .weather_icon {
+  position: relative;
+  height: 100px;
 }
 
 .settings_container {
@@ -153,24 +162,28 @@ li a:hover:not(.active) {
   color: white;
   margin-left: -230px;
   transition: margin 500ms ease-in-out;
+  z-index: 4;
 }
 
 .nav-side.nav-open{
   margin-left: 0;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
 }
 
 .nav-toggle {
-  position: absolute;
-  right: -50px;
+  /* figure out how to fix this position--nav-toggle should move WITH page scroll */
+  position: fixed;
+  left: 15px;
   top: 0;
   width: 50px;
   height: 50px;
+  padding-top: 5;
   background-color: #252525;
   line-height: 50px;
   text-decoration: none;
   text-align: center;
   border-bottom-right-radius: 0px;
+  z-index: 4;
 }
 
 .nav-toggle:before {
@@ -182,4 +195,6 @@ li a:hover:not(.active) {
 
 .nav-side.nav-open .nav-toggle:before {
   content: "\2715";
+  top: 0;
+
 }
