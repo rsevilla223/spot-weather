@@ -43,9 +43,19 @@ function(err, data) {
 
   var htmlText = '';
 
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var d = new Date();
+  var currentDay = days[d.getDay()];
+
+  var datetest = new Date("2016-11-17 09:00:00");
+  var today = datetest.getDay();
+
+  console.log("Today is: " + today);
+
 //Here we basically create HTML elements to be added to the page by appending them
 //to one string and then convert this string to HTML and add it to the body by using the append function in jQuery
   htmlText += "<div class='weather_display'>";
+  htmlText += "<p class='day'>Today is: "+ currentDay + "</p>";
   htmlText += "<p class='temperature'>Current Temp in " + data.name + ": " + data.main.temp + "</p>";
   htmlText += "<p class='temperature'>Current Forecast in "+ data.name +": " + data.weather[0].main + "</p>";
   htmlText += "<p class='temperature'>" + forecast_sentence + "</p>";
@@ -64,6 +74,7 @@ function(err, data) {
   var largest = 0;
   var temptotal;
   var count;
+  //var tempObject = {temp};
   console.log(data.list.length);
   for(var i=0;i<data.list.length;i++){
 
@@ -71,11 +82,11 @@ function(err, data) {
       largest = data.list[i].dt_txt.substring(8,10);
       console.log("Total temp is " + temptotal/count);
       if (temptotal > 0){
-        temps.push(temptotal/count);
+        var tempObject = {temp:temptotal/count, date:data.list[i-1].dt_txt};
+        temps.push(tempObject);
       }
       temptotal = 0;
       count = 0;
-
     }
 
     temptotal += data.list[i].main.temp;
@@ -83,8 +94,33 @@ function(err, data) {
 
 
 
-    console.log("The temp for " + data.list[i].dt_txt.substring(8,10) + " is " + data.list[i].main.temp);
+    console.log("The temp for " + data.list[i].dt_txt + " is " + data.list[i].main.temp);
   }
+//bs
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var d = new Date();
+  var currentDay = days[d.getDay()];
+
+  var datetest = new Date("2016-11-17 09:00:00");
+  var today = datetest.getDay();
+
+  console.log("Today is: " + today);
+//bs
+  var htmlText = '';
+
+  htmlText += "<div class='5dayweather_display'>";
+
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  for(var x=0; x<temps.length; x++){
+    var loopDate = new Date(temps[x].date);
+    htmlText += "<p class='daytemps'>"+ days[loopDate.getDay()] + ": " + Math.round(temps[x].temp) + "</p>";
+  }
+
+
+  htmlText += "</div>";
+
+  $('.weather_container').append(htmlText);
 
   console.log(temps);
 })
