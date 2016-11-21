@@ -197,11 +197,69 @@ li a:hover:not(.active) {
     right: 0px;
     left: 30%;
     width: 40%;
-    height: 200px;
-	margin: auto;
+    height: 220px;
+    margin: auto;
     color: #ffffff;
     border-radius: 20px;
 }
+/*5 day weather display styling*/
+.dayweather_display {
+  background-color: rgba(97, 97, 97, 0.13);
+  text-align: center;
+  line-height: 40px;
+  vertical-align: middle;
+  top: 10%;
+  bottom: auto;
+  right: 0px;
+  left: 30%;
+  width: 50%;
+  height: 90px;
+  margin: auto;
+  margin-top: 20px;
+  color: red;
+  padding: 0px;
+}
+
+table {
+  margin: auto;
+  color: white;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #3c9ebc;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+td {
+  color: white;
+  border: 1px solid #27333c;
+  text-align: center;
+  padding: 0px;
+  width: 105.33px;
+  height: 20px;
+  border-top: none;
+  border-bottom: none;
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
+th {
+  color: white;
+  border: 1px solid #27333c;
+  text-align: center;
+  padding: 0px;
+  width: 105.33px;
+  border-bottom: none;
+  border-top: none;
+}
+
+.daytemps {
+  color: white;
+  width: 20px;
+}
+/*end 5 day weather display styling*/
 
 .settings_container {
 	  background-color: #000000;

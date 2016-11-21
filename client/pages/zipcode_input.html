@@ -8,12 +8,13 @@
 	<div class="zipForm">
 		<p class="tagline">Enter your zipcode to get started:</p>
  		<br>
-  <form action="index.html" method="GET">
-    <input type="text" name="enteredZipcode" />
+  <form action="index.html" onsubmit="return validateZip();" method="GET">
+    <input type="text" name="enteredZipcode" class="zipcode"/>
 		<br>
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Submit" class="zipcodeSubmit"/>
 </form>
 <div class="footer">WeatherSpot is an elegant way to find tailored playlists that fit today's forecast.</div>
 </div>
 </div>
+<script src="../../client/logic/zipcode_errors.js"></script>
 </body>
