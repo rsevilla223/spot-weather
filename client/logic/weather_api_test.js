@@ -70,17 +70,18 @@ function(err, data) {
   console.log(data);
 
 
-  var temps = [];
+  var temps = [];//empty array to store final temp objects for each day in
   var largest = 0;
   var temptotal;
   var count;
   //var tempObject = {temp};
-  console.log(data.list.length);
-  for(var i=0;i<data.list.length;i++){
+  //console.log(data.list.length);
+  for(var i=0;i<data.list.length;i++){// Here I loop through the api which presents the data in 5 increments of 3 hours, I then average the temps to get a final
+    //average temp which is then pushed to the temps array in an object along with the date that corresponds to it
 
     if (data.list[i].dt_txt.substring(8,10) > largest || i+1 == data.list.length){
       largest = data.list[i].dt_txt.substring(8,10);
-      console.log("Total temp is " + temptotal/count);
+      //console.log("Total temp is " + temptotal/count);
       if (temptotal > 0){
         var tempObject = {temp:temptotal/count, date:data.list[i-1].dt_txt};
         temps.push(tempObject);
@@ -94,18 +95,11 @@ function(err, data) {
 
 
 
-    console.log("The temp for " + data.list[i].dt_txt + " is " + data.list[i].main.temp);
+    //console.log("The temp for " + data.list[i].dt_txt + " is " + data.list[i].main.temp);
   }
-//bs
-  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  var d = new Date();
-  var currentDay = days[d.getDay()];
 
-  var datetest = new Date("2016-11-17 09:00:00");
-  var today = datetest.getDay();
+  //console.log("Today is: " + today);
 
-  console.log("Today is: " + today);
-//bs
   var htmlText = '';
 
   htmlText += "<div class='5dayweather_display'>";
@@ -122,5 +116,5 @@ function(err, data) {
 
   $('.weather_container').append(htmlText);
 
-  console.log(temps);
+  //console.log(temps);
 })
