@@ -24,8 +24,26 @@ function getUrlVars() {
 var zipcode = getUrlVars()["enteredZipcode"];//Pulls the zipcode from the url at the top that was setup by the submit zipcode page
 console.log(zipcode);
 
+var callUrl;
+
+var latitude = sessionStorage.latitude;
+var longitude = sessionStorage.longitude;
+
+if (latitude && longitude){
+  console.log("Using location " + latitude+" "+longitude);
+  callUrl = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude;
+}
+else {
+  console.log("Using zipcode");
+  callUrl = "http://api.openweathermap.org/data/2.5/weather?zip="+ zipcode;
+}
+
+var delay = 1000;
+
+setTimeout(function(){
+
 //Here's where the actual API request takes place, notice how I'm appending the zipcode that the user submitted in the previous page to the URL
-getJSON("http://api.openweathermap.org/data/2.5/weather?zip="+ zipcode +",us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
+getJSON(callUrl +",us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
 function(err, data) {
   console.log(data);
   if (err != null) {
@@ -50,7 +68,6 @@ function(err, data) {
   var datetest = new Date("2016-11-17 09:00:00");
   var today = datetest.getDay();
 
-  console.log("Today is: " + today);
 
 //Here we basically create HTML elements to be added to the page by appending them
 //to one string and then convert this string to HTML and add it to the body by using the append function in jQuery
@@ -65,7 +82,18 @@ function(err, data) {
 });
 
 //get 5 day forecast
-getJSON("http://api.openweathermap.org/data/2.5/forecast?zip="+zipcode+",us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
+var x = callUrl.replace("weather","forecast");
+
+console.log(callUrl.substring(0,39));
+console.log(x);
+
+var forecastUrl = callUrl.substring(0,39) + "forecast" + callUrl.substring(46,callUrl.length);
+console.log(forecastUrl);
+
+
+
+
+getJSON(forecastUrl+",us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
 function(err, data) {
   console.log(data);
 
@@ -93,13 +121,9 @@ function(err, data) {
     temptotal += data.list[i].main.temp;
     count++;
 
-
-
     //console.log("The temp for " + data.list[i].dt_txt + " is " + data.list[i].main.temp);
   }
-
-  //console.log("Today is: " + today);
-
+//This is where the forecast gets outputted to the page
   var htmlText = '';
 
   htmlText += "<div class='5dayweather_display'>";
@@ -108,9 +132,8 @@ function(err, data) {
 
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date(temps[x].date);
-    htmlText += "<p class='daytemps'>"+ days[loopDate.getDay()] + ": " + Math.round(temps[x].temp) + "</p>";
+    htmlText += "<p class='daytemps'>"+ days[loopDate.getDay()] + ": " + Math.round(temps[x].temp) + "</p>";//The loop creates one of these lines for each day
   }
-
 
   htmlText += "</div>";
 
@@ -118,3 +141,5 @@ function(err, data) {
 
   //console.log(temps);
 })
+
+}, delay);
