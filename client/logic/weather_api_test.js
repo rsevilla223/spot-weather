@@ -43,7 +43,7 @@ var delay = 1000;
 setTimeout(function(){
 
 //Here's where the actual API request takes place, notice how I'm appending the zipcode that the user submitted in the previous page to the URL
-getJSON(callUrl +",us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
+getJSON(callUrl +"&us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
 function(err, data) {
   console.log(data);
   if (err != null) {
@@ -93,7 +93,7 @@ console.log(forecastUrl);
 
 
 
-getJSON(forecastUrl+",us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
+getJSON(forecastUrl+"&us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
 function(err, data) {
   console.log(data);
 
