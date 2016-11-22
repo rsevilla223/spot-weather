@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Location Test</title>
+<style>
+#map {width:100%;height:100%;}
+</style>
+<script type="text/javascript">
+    console.log("running script");
+
+    function initGeolocation() {
+ if (navigator && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        } else {
+            console.log('Geolocation is not supported');
+        }
+}
+
+function errorCallback() {
+  console.log("it didn't work");
+}
+
+function successCallback(position) {
+      sessionStorage.latitude = position.coords.latitude;
+      sessionStorage.longitude =  position.coords.longitude;
+      window.location = "index.html";//redirects to main page
+    }
+</script>
+</head>
+<body onload="javascript:initGeolocation()">
+</body>
+</html>
