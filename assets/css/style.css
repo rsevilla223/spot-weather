@@ -211,6 +211,7 @@ li a:hover:not(.active) {
 }
 .weather_container p {
   margin-top: 0;
+  margin-bottom: 0;
 }
 /*5 day weather display styling*/
 .dayweather_display {
