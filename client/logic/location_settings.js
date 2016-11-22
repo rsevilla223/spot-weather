@@ -22,17 +22,27 @@ function locationSettings() {
 
 	function getInput() {
     var showme = document.getElementById("zipBox");
+		var location_text = $(".zipBox").val();
+
 	if(showme.style.visibility=="visible")
 	{
-		if($(".zipBox").val()!="")	{createLocation();}
 
+		if(location_text.length!=5 || !isNum(location_text)) {
+			alert("Please enter a valid zipcode.");
+			return false;
+		}
+		if($(".zipBox").val()!="")	{createLocation();}
 		$(".zipBox").val("");
 		showme.style.visibility="hidden";
+		return true;
 	}
 	else
 	{
 		showme.style.visibility="visible";
 	}
+};
+function isNum(val) {
+	return Number (parseFloat(val))==val;
 };
 
 	// setting up the logic for making API requests
@@ -77,7 +87,7 @@ function(err, data) {
   var htmlText = '';
 
 //Here we create HTML elements to be added to the page by appending them to one string and then convert this string to HTML and add it to the body by using the append function in jQuery
-  htmlText += "<li class='location-input'>" + data.name + "<button class='delete-button'>" + "&#10006" + "</button>" + "</li>";
+  htmlText += "<li class='location-input'><input type='radio' name='location' value='location'>"+" " + data.name + "</input><button class='delete-button'>" + "&#10006" + "</button>" + "</li>";
 
   $('.location-settings').append(htmlText);
 });
