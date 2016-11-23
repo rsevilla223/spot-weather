@@ -43,11 +43,22 @@
 			<a href="index.html"><img class = "home_logo" src="../../media/images/spotweatherlogo.svg"></a>
 		</div>
 
+<div class="center_info" id="center_info">
 		<div class="weather_container"></div>
-
+		<div class="dayweather_display"></div>
+		<p class="tagline">Change location:</p>
+		<br>
+		<form action="index.html" onsubmit="return validateZip();" method="GET">
+			<input type="text" name="enteredZipcode" class="zipcode"/ placeholder="Enter your zipcode">
+			<br>
+			<input type="submit" value="Submit" class="zipcodeSubmit"/>
+		</form>
+</div>
 		<script src="../../client/logic/weather_api_test.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="../../client/logic/sidebar.js"></script>
+		<script src="../../client/logic/background_images.js"></script>
+		<script src="../../client/logic/zipcode_errors.js"></script>
 	</body>
 
 
