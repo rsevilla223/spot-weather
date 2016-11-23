@@ -11,8 +11,14 @@
   <form action="index.html" onsubmit="return validateZip();" method="GET">
     <input type="text" name="enteredZipcode" class="zipcode"/>
 		<br>
-    <input type="submit" value="Submit" class="zipcodeSubmit"/>
-</form>
+    <input type="submit" value="Submit" />
+		<script>sessionStorage.clear();</script>
+	</form>
+
+	<form action="location_services.html" method="GET">
+    <input type="submit" value="Or, use your location" />
+	</form>
+
 <div class="footer">WeatherSpot is an elegant way to find tailored playlists that fit today's forecast.</div>
 </div>
 </div>
