@@ -38,9 +38,9 @@ else {
   callUrl = "http://api.openweathermap.org/data/2.5/weather?zip="+ zipcode;
 }
 
-var delay = 1000;
+//var delay = 1000;
 
-setTimeout(function(){
+//setTimeout(function(){
 
 //Here's where the actual API request takes place, notice how I'm appending the zipcode that the user submitted in the previous page to the URL
 getJSON(callUrl +"&us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
@@ -142,4 +142,4 @@ function(err, data) {
   //console.log(temps);
 })
 
-}, delay);
+//}, delay);
