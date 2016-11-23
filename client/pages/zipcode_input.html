@@ -1,17 +1,25 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Catamaran:200|Raleway|Source+Sans+Pro:200" rel="stylesheet">
 
 <body class="splash_body" style="background:url(https://static.pexels.com/photos/1227/night-dark-blur-blurred.jpg);">
-	<img class = "splash_logo" src="media/images/spotweatherlogoshadow.svg">
+	<img class = "splash_logo" src="../../media/images/spotweatherlogoshadow.svg">
 <div class="splash_screen">
-	<div class="tagline">Enter your zipcode to get started:</div>
 	<div class="zipForm">
+		<p class="tagline">Enter your zipcode to get started:</p>
+ 		<br>
   <form action="index.html" method="GET">
     <input type="text" name="enteredZipcode" />
 		<br>
     <input type="submit" value="Submit" />
-</form>
+		<script>sessionStorage.clear();</script>
+	</form>
+
+	<form action="location_services.html" method="GET">
+    <input type="submit" value="Or, use your location" />
+	</form>
+
+
 <div class="footer">WeatherSpot is an elegant way to find tailored playlists that fit today's forecast.</div>
 </div>
 </div>
