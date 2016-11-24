@@ -87,7 +87,7 @@ function(err, data) {
   var htmlText = '';
 
 //Here we create HTML elements to be added to the page by appending them to one string and then convert this string to HTML and add it to the body by using the append function in jQuery
-  htmlText += "<li class='location-input'><input type='radio' name='location' value='location'>"+" " + data.name + "</input><button class='delete-button'>" + "&#10006" + "</button>" + "</li>";
+  htmlText += "<li class='location-input'><input type='radio' class='radiobtn' name='location' id='"+data.name+"' value='location'>"+" " + "<label for='"+data.name+"'><span></span>"+ data.name +"</label>"+ "<button class='delete-button'>" + "&#10006" + "</button>" + "</li>";
 
   $('.location-settings').append(htmlText);
 });

@@ -81,6 +81,10 @@ function(err, data) {
           break;
       };
       break;
+    case "Smoke":
+      var forecast_sentence = "The air is smoky in your area.";
+      document.getElementById("center_info").style.backgroundImage = "url('../../media/images/smoke.jpg')";
+      break;
     case "Clear":
       var forecast_sentence = "It's a beautiful day!";
       document.getElementById("center_info").style.backgroundImage = "url('../../media/images/clear.jpg')";
@@ -101,7 +105,7 @@ function(err, data) {
           break;
         case "smoke":
           var forecast_sentence = "The air is smoky in your area.";
-          document.getElementById("center_info").style.backgroundImage = "url('../../media/images/smoke.jpeg')";
+          document.getElementById("center_info").style.backgroundImage = "url('../../media/images/smoke.jpg')";
           break;
         case "haze":
           var forecast_sentence = "It's hazy out today";
