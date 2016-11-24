@@ -4,7 +4,7 @@ body {
 		background-color: #1f2122;
 }
 
-/*background image styling*/
+/* background image styling */
 .center_info {
   height: 100vh;
   background-size: cover;
@@ -38,9 +38,9 @@ input[type=text] {
     background-color: #3c9ebc;
     color: white;
     text-align: center;
-  }
+}
 
-  .footer{
+.footer{
   position: fixed;
   margin-top: 5%;
   font-size: 30pt;
@@ -71,21 +71,21 @@ input[type=submit] {
   margin: auto;
 }
 
-
 .sidebar {
-list-style-type: none;
-margin: 0;
-padding: 0;
-width: 192px;
-background-color: #252525;
-position: fixed;
-height: 100%;
-overflow: auto;
-font-family: 'Source Sans Pro', sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 192px;
+  background-color: #252525;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  font-family: 'Source Sans Pro', sans-serif;
 }
+
 .sidebar.collapsed {
-    max-width: 0;
-    overflow: hidden;
+  max-width: 0;
+  overflow: hidden;
 }
 
 .tagline {
@@ -104,8 +104,8 @@ font-family: 'Source Sans Pro', sans-serif;
 }
 
 .profile_pane.collapsed {
-    max-width: 0;
-    overflow: hidden;
+  max-width: 0;
+  overflow: hidden;
 }
 
 .profile_picture {
@@ -122,23 +122,23 @@ font-family: 'Source Sans Pro', sans-serif;
 }
 
 .sidebar.profile_pane.collapsed {
-    max-width: 0;
-    overflow: hidden;
+  max-width: 0;
+  overflow: hidden;
 }
 
 .mainbar {
-	  list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #252525;
-		height:50px;
-    width: 100%;
-    left: 0px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #252525;
+	height:50px;
+  width: 100%;
+  left: 0px;
 }
 
 header {
-	margin-left: 40%;
+    margin-left: 40%;
 }
 
 .mainbar .home_logo {
@@ -158,29 +158,30 @@ header {
   list-style-type: none;
 }
 
+/* begin slideout menu option */
 .menu_options li {
-	  border-bottom: 1px solid #313131;
-    list-style-type: none;
-    text-align: center;
+	border-bottom: 1px solid #313131;
+  list-style-type: none;
+  text-align: center;
 }
 
 .menu_options li a {
-    display: block;
-    color: white;
-    padding: 11px 70px;
-    margin-left: 0px;
-    text-align: center;
-    text-decoration: none;
-    list-style-type: none;
+  display: block;
+  color: white;
+  padding: 11px 70px;
+  margin-left: 0px;
+  text-align: center;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .menu_options li a.active {
-    background-color: white;
-    color: black;
-    width: 90px;
-    text-align: center;
-    margin-left: -20px;
-	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: #3c9ebc;
+  color: white;
+  width: 90px;
+  text-align: center;
+  margin-left: -20px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 li a:hover:not(.active) {
@@ -192,7 +193,9 @@ li a:hover:not(.active) {
     margin-right: -20px;
 	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-/*weather container styling*/
+/* end slideout menu option */
+
+/* weather container styling */
 .weather_container {
     background-color: rgba(97, 97, 97, 0.13);
     text-align: center;
@@ -209,10 +212,12 @@ li a:hover:not(.active) {
     color: #ffffff;
     border-radius: 20px;
 }
-.weather_container p {
+
+.weather_container {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 /*5 day weather display styling*/
 .dayweather_display {
   background-color: transparent;
@@ -233,68 +238,69 @@ li a:hover:not(.active) {
 }
 
 table {
-  margin: auto;
-  color: white;
-  border-collapse: collapse;
-  width: 100%;
-  background-color: #3c9ebc;
-  border-top: none;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  border-radius: 5px;
-  border-color: black;;
+    margin: auto;
+    color: white;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #3c9ebc;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 5px;
+    border-color: black;
 }
 
 td {
-  color: white;
-  border: 1px solid #27333c;
-  text-align: center;
-  padding: 0px;
-  width: 105px;
-  height: 20px;
-  border-top: none;
-  border-bottom: none;
-  font-size: 40px;
-  padding-bottom: 10px;
-  border-color: black;;
+    color: white;
+    border: 1px solid #27333c;
+    text-align: center;
+    padding: 0px;
+    width: 105px;
+    height: 20px;
+    border-top: none;
+    border-bottom: none;
+    font-size: 40px;
+    padding-bottom: 10px;
+    border-color: black;
 }
 
 th {
-  color: white;
-  border: 1px solid #27333c;
-  text-align: center;
-  padding: 0px;
-  width: 105px;
-  border-bottom: none;
-  border-top: none;
-  border-color: black;
+    color: white;
+    border: 1px solid #27333c;
+    text-align: center;
+    padding: 0px;
+    width: 105px;
+    border-bottom: none;
+    border-top: none;
+    border-color: black;
 }
 
 .daytemps {
   color: white;
   width: 20px;
 }
-/*end 5 day weather display styling*/
+/* end 5 day weather display styling */
 
-/*update zipcode box*/
+/* update zipcode box */
 .tagline {
   color: white;
   padding: 5px;
 }
 
 .settings_container {
-	  background-color: #000000;
-    width: 100%;
-    text-align: right;
-    border-radius: 100px;
-    background-color: #000000;
-    position: static;
-    height: 125%;
-    width: 100%;
-    font-family: 'Source Sans Pro', sans-serif;
+	background-color: #000000;
+  width: 100%;
+  text-align: right;
+  border-radius: 100px;
+  background-color: #000000;
+  position: relative;
+  height: 125%;
+  width: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* begin slideout menu */
 .nav-side {
   position: fixed;
   left: 0;
@@ -308,24 +314,27 @@ th {
   color: white;
   margin-left: -230px;
   transition: margin 500ms ease-in-out;
+  z-index: 4;
 }
 
 .nav-side.nav-open{
   margin-left: 0;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
 }
 
 .nav-toggle {
-  position: absolute;
-  right: -50px;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 50px;
   height: 50px;
-  background-color: #252525;
+  padding-top: 5;
+  opacity: .9;
   line-height: 50px;
   text-decoration: none;
   text-align: center;
   border-bottom-right-radius: 0px;
+  z-index: 4;
 }
 
 .nav-toggle:before {
@@ -337,21 +346,23 @@ th {
 
 .nav-side.nav-open .nav-toggle:before {
   content: "\2715";
+  top: 0;
 }
+/* end slideout menu */
 
-/*settings list*/
+/* settings list */
 .settings {
 	background-color: rgba(97, 97, 97, 0.13);
-    width: 98%;
-    text-align: center;
-    border-radius: 10px;
+  width: 98%;
+  text-align: center;
+  border-radius: 10px;
 	margin: auto;
 }
 
 h1 {
-	color: white;
-	font-family: 'Source Sans Pro', sans-serif;
-	padding: 10px 0%;
+  	color: white;
+  	font-family: 'Source Sans Pro', sans-serif;
+  	padding: 10px 0%;
 }
 
 .settings ul {
@@ -395,6 +406,7 @@ h1 {
 	text-decoration: none;
 	text-align: left;
 }
+
 /*radio button styling*/
 .radiobtn {
   cursor: pointer;
@@ -423,6 +435,11 @@ input[type="radio"]:checked + label span {
 
 /*toggle switch settings begin here*/
 /* The switch - the box around the slider */
+
+
+/* begin toggle switch settings */
+/* the switch - the box around the slider */
+
 .switch {
   position: relative;
   display: inline-block;
@@ -431,10 +448,10 @@ input[type="radio"]:checked + label span {
   height: 17px;
 }
 
-/* Hide default HTML checkbox */
+/* hide default HTML checkbox */
 .switch input {display:none;}
 
-/* The slider */
+/* the slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -460,20 +477,20 @@ input[type="radio"]:checked + label span {
 }
 
 input:checked + .slider {
-  background-color: #3c9ebc;
+    background-color: #3c9ebc;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2196F3;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
-/* Rounded sliders */
+/* rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
@@ -481,7 +498,8 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-/*add location form*/
+
+/* add location form */
 .add-location p {
 	padding: 0;
 	float: left;
@@ -491,30 +509,28 @@ input:checked + .slider:before {
 }
 
 .add-location input[type=text] {
-    width: 18%;
-    padding: 8px 20px;
+  width: 18%;
+  padding: 8px 20px;
 	margin-right: 10px;
 	float: right;
-    box-sizing: border-box;
-    border: none;
-    background-color: #3c9ebc;
-    color: white;
-    text-align: center;
+  box-sizing: border-box;
+  border: none;
+  background-color: #3c9ebc;
+  color: white;
+  text-align: center;
 	visibility: hidden;
  }
 
-
-
-/*plus-button styling*/
+/* plus-button styling */
 .plus-button {
-    background-color: gray;
-    border: none;
-    color: white;
-    padding: 0px 5px .7px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 0px 5px .7px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
 	border-radius: 50%;
 	float: right;
 	cursor: pointer;
@@ -522,34 +538,35 @@ input:checked + .slider:before {
 
 .plus-button:hover {
 	background-color: #3c9ebc;
-    border: none;
-    color: white;
-    padding: 0px 5px .7px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
+  border: none;
+  color: white;
+  padding: 0px 5px .7px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
 	border-radius: 50%;
 	float: right;
 	cursor: pointer;
 }
 
-/*delete-button styling*/
+/* delete-button styling */
 .delete-button {
-    background-color: gray;
-    border: none;
-    color: white;
+  background-color: gray;
+  border: none;
+  color: white;
 	padding: 0px 5px .7px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
 	border-radius: 50%;
 	float: right;
 	cursor: pointer;
 }
 
 .delete-button:hover {
+
 	  background-color: #990033;
     border: none;
     color: white;
@@ -629,3 +646,17 @@ input:checked + .slider:before {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
 /*END SETTINGS STYLES*/
+
+	background-color: #990033;
+  border: none;
+  color: white;
+  padding: 0px 5px .7px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+	border-radius: 50%;
+	float: right;
+	cursor: pointer;
+}
+/* end settings styles */
