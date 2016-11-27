@@ -30,7 +30,7 @@ var latitude = sessionStorage.latitude;
 var longitude = sessionStorage.longitude;
 
 if (latitude && longitude){
-  console.log("Using location " + latitude+" "+longitude);
+  console.log("Using location " + latitude +" "+ longitude);
   callUrl = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude;
 }
 else {
