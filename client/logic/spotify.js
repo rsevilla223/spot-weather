@@ -22,12 +22,23 @@ function(err,data) {
   htmlText = '';
 
   htmlText += "<div class='spotify_display'>";
-  htmlText += '<button onclick="playAudio(audioObject)">Play</button>';
-  htmlText += '<button onclick="pauseAudio(audioObject)">Pause</button>';
+  var tracks = [];
   for (var i=0; i<data.tracks.items.length; i++){
-    htmlText += "<p class='track_info' style='color:white;'>" + data.tracks.items[i].name + ' ' + data.tracks.items[i].artists[0].name + "</p>";
+    var track_string = i+'. ' + data.tracks.items[i].name + ' ' + data.tracks.items[i].artists[0].name;
+    var track_object = {number:i, artist:data.tracks.items[i].artists[0].name, title:data.tracks.items[i].name,
+    preview:data.tracks.items[i].preview_url};
+    tracks.push(track_object);
+
+    htmlText += "<p class='track_info' id='" +i+"' style='color:white;' track_url='"+data.tracks.items[i].preview_url+"' ondblclick='createAndPlay(getTrackUrl("+i+"));' track_number="+i+">" + track_string + "</p>";
+
+
   }
-  htmlText += "<p class='track_info'>" + data.tracks.items[0].name + ' ' + data.tracks.items[0].artists[0].name + "</p>";
+
+
+  htmlText += '<button onclick="playAudio(sessionStorage.currentAudio)">Play</button>';
+  htmlText += '<button onclick="pauseAudio(audioObject)">Pause</button>';
+  console.log(tracks);
+
   htmlText += "</div>";
 
   $('.spotify_info').append(htmlText);
@@ -35,12 +46,32 @@ function(err,data) {
 
 })
 
-var createAudio = function(audioURL){
-  var audio = new Audio(audioURL)
+var getTrackUrl = function(track_number) {
+  var track_url = document.getElementById(""+track_number+"").getAttribute('track_url');
+  return track_url;
+}
+
+var createAndPlay = function(audio_url){
+  console.log("running createAndPlay for " + audio_url);
+  var audioObject = createAudio(audio_url);
+  audioObject.play();
+}
+
+
+var createAudio = function(audio_url){
+  console.log("creating audio");
+  //var audioURL = findTrack(track_number, track_array);
+  var audio = new Audio(audio_url);
   return audio;
 }
 
+var findTrack = function(track_number, track_array){
+  audioURL = track_array[track_number].preview;
+  return audioURL;
+}
+
 var playAudio = function(audioObject){
+  console.log("playing audio preview");
   audioObject.play();
 }
 
