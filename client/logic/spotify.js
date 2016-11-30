@@ -19,9 +19,10 @@ var getForecast = function() {
   return forecast;
 }
 
-var main_forecast = getForecast();
+//var main_forecast = getForecast();
 
-getJSON("https://api.spotify.com/v1/search?q="+main_forecast+"&type=track",
+//getJSON("https://api.spotify.com/v1/search?q="+main_forecast+"&type=track",
+getJSON("https://api.spotify.com/v1/search?q=mist&type=track",
 function(err,data) {
   console.log(data);
   //var audio = new Audio('https://p.scdn.co/mp3-preview/f9f00efa0d95d2db76f1a95a518f5f0df0520b59');
