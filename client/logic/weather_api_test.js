@@ -38,14 +38,13 @@ else {
   callUrl = "http://api.openweathermap.org/data/2.5/weather?zip="+ zipcode;
 }
 
-//var delay = 1000;
-
-//setTimeout(function(){
 
 //Here's where the actual API request takes place, notice how I'm appending the zipcode that the user submitted in the previous page to the URL
 getJSON(callUrl +"&us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
 function(err, data) {
   console.log(data);
+  //sessionStorage.removeItem(forecast);
+  sessionStorage.forecast = data.weather[0].main;//store main forecast for use with spotify
   if (err != null) {
     alert("Something went wrong: " + err);
   } else {
@@ -253,7 +252,7 @@ document.getElementById("center_info").style.backgroundImage = "url('../../media
   htmlText += "<div class='weather_display'>";
   htmlText += "<p class='day'>Today is: "+ currentDay + "</p>";
   htmlText += "<p class='temperature'>Current temperature in " + data.name + ": " + data.main.temp +"&#176;"+"F"+ "</p>";
-  htmlText += "<p class='temperature'>Current forecast in "+ data.name +": " + data.weather[0].main + "</p>";
+  htmlText += "<p class='temperature' id='mainforecast' spotforecast='"+data.weather[0].main+"'>Current forecast in "+ data.name +": " + data.weather[0].main + "</p>";
   htmlText += "<p class='temperature'>" + forecast_sentence + "</p>";
   htmlText += "</div>";
 
@@ -326,7 +325,7 @@ function(err, data) {
   $('.dayweather_display').append(htmlText);
 
 
-  //console.log(temps);
+  console.log(temps);
 })
 
 //}, delay);

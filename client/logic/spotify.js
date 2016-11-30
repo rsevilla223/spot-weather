@@ -13,7 +13,15 @@ var getJSON = function(url, callback) {//just setting up the logic for making AP
     xhr.send();
 };
 
-getJSON("https://api.spotify.com/v1/search?q=mist&type=track",
+
+var getForecast = function() {
+  var forecast = document.getElementById("mainforecast").getAttribute('spotforecast');
+  return forecast;
+}
+
+var main_forecast = getForecast();
+
+getJSON("https://api.spotify.com/v1/search?q="+main_forecast+"&type=track",
 function(err,data) {
   console.log(data);
   //var audio = new Audio('https://p.scdn.co/mp3-preview/f9f00efa0d95d2db76f1a95a518f5f0df0520b59');
@@ -29,14 +37,11 @@ function(err,data) {
     preview:data.tracks.items[i].preview_url};
     tracks.push(track_object);
 
-    htmlText += "<p class='track_info' id='" +i+"' style='color:white;' track_url='"+data.tracks.items[i].preview_url+"' ondblclick='createAndPlay(getTrackUrl("+i+"));' track_number="+i+">" + track_string + "</p>";
+    htmlText += "<li class='track_info' id='" +i+"' style='color:white;' track_url='"+data.tracks.items[i].preview_url+"' artist_name='"+data.tracks.items[i].artists[0].name+"' song_name='"+data.tracks.items[i].name+"' ondblclick='createAndPlay(getTrackUrl("+i+"), getTrackObject("+i+"));' track_number="+i+">" + track_string + "</li>";
 
 
   }
 
-
-  htmlText += '<button onclick="playAudio(sessionStorage.currentAudio)">Play</button>';
-  htmlText += '<button onclick="pauseAudio(audioObject)">Pause</button>';
   console.log(tracks);
 
   htmlText += "</div>";
@@ -51,10 +56,24 @@ var getTrackUrl = function(track_number) {
   return track_url;
 }
 
-var createAndPlay = function(audio_url){
+var getTrackObject = function(track_number) {
+  var track_object = {artist_name: document.getElementById(""+track_number+"").getAttribute('artist_name'),
+                      song_name: document.getElementById(""+track_number+"").getAttribute('song_name')};
+  return track_object;
+}
+
+var createAndPlay = function(audio_url, track_object){
+  $('.audio_player').html('');
+  var htmlText = '';
   console.log("running createAndPlay for " + audio_url);
-  var audioObject = createAudio(audio_url);
-  audioObject.play();
+
+  //var audioObject = createAudio(audio_url);
+  htmlText += '<p style="color:white;">Now Playing: '+track_object.artist_name+" "+track_object.song_name+'</p>';
+  htmlText += '<audio controls autoplay="true">';
+  htmlText += '<source src="'+audio_url+'" type="audio/mp3">';
+  htmlText += '</audio>';
+  $('.audio_player').append(htmlText);
+  //audioObject.play();
 }
 
 
