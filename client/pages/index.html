@@ -9,6 +9,7 @@
 
 		<link rel="stylesheet" href="../../assets/css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Catamaran:600|Raleway|Source+Sans+Pro:200" rel="stylesheet">
+		<link rel="stylesheet" href="../../bower_components/plyr/dist/plyr.css">
 
 		<!-- plugin for weather API -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -54,11 +55,20 @@
 			<input type="submit" value="Submit" class="zipcodeSubmit"/>
 		</form>
 </div>
+<div class="spotify_info"></div>
+<div class="audio_player" id="audio_player">
+	<audio controls>
+	  <source src="https://p.scdn.co/mp3-preview/f9f00efa0d95d2db76f1a95a518f5f0df0520b59" type="audio/mp3">
+	</audio>
+</div>
+
 		<script src="../../client/logic/weather_api_test.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="../../client/logic/sidebar.js"></script>
-		<script src="../../client/logic/background_images.js"></script>
 		<script src="../../client/logic/zipcode_errors.js"></script>
+		<script src="../../client/logic/spotify.js"></script>
+		<script src="../../bower_components/plyr/dist/plyr.js"></script>
+		<script>plyr.setup();</script>
 	</body>
 
 
