@@ -84,6 +84,14 @@ function(err, data) {
       var forecast_sentence = "The air is smoky in your area.";
       document.getElementById("center_info").style.backgroundImage = "url('../../media/images/smoke.jpg')";
       break;
+    case "Fog":
+      var forecast_sentence = "Don't get lost in the fog today."
+      document.getElementById("center_info").style.backgroundImage = "url('../../media/images/fog.jpg')";
+      break;
+    case "mist":
+      var forecast_sentence = "It's a misty day.";
+      document.getElementById("center_info").style.backgroundImage = "url('../../media/images/mist.jpeg')";
+      break;
     case "Clear":
       var forecast_sentence = "It's a beautiful day!";
       document.getElementById("center_info").style.backgroundImage = "url('../../media/images/clear.jpg')";
@@ -250,13 +258,14 @@ document.getElementById("center_info").style.backgroundImage = "url('../../media
 //Here we basically create HTML elements to be added to the page by appending them
 //to one string and then convert this string to HTML and add it to the body by using the append function in jQuery
   htmlText += "<div class='weather_display'>";
-  htmlText += "<p class='day'>Today is: "+ currentDay + "</p>";
-  htmlText += "<p class='temperature'>Current temperature in " + data.name + ": " + data.main.temp +"&#176;"+"F"+ "</p>";
-  htmlText += "<p class='temperature' id='mainforecast' spotforecast='"+data.weather[0].main+"'>Current forecast in "+ data.name +": " + data.weather[0].main + "</p>";
-  htmlText += "<p class='temperature'>" + forecast_sentence + "</p>";
+  htmlText += "<p class='day'>"+ currentDay + "</p>";
+  htmlText += "<p class='region'>"+data.name+"</p>";
+  htmlText += "<p class='temperature'>" +data.main.temp +"&#176;"+"F"+ "</p>";
+  htmlText += "<p class='forecast' id='mainforecast' spotforecast='"+data.weather[0].main+"'>" + data.weather[0].main + "</p>";
+  htmlText += "<p class='sentence'>" + forecast_sentence + "</p>";
   htmlText += "</div>";
 
-  $('.weather_container').append(htmlText);
+  $('.today_forecast').append(htmlText);
 });
 
 //get 5 day forecast
@@ -310,7 +319,12 @@ function(err, data) {
 
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date(temps[x].date);
-    htmlText += "<th class='daytemps'>"+ days[loopDate.getDay()] + ": " + Math.round(temps[x].temp) + "</th>";//The loop creates one of these lines for each day
+    htmlText += "<th class='daytemps'>"+ days[loopDate.getDay()] + "</th>";//The loop creates one of these lines for each day
+  }
+  htmlText += "</tr><tr>";
+  for(var x=0; x<temps.length; x++){
+    var loopDate = new Date (temps[x].date);
+    htmlText += "<td>" + "icon" + "</td>";
   }
   htmlText += "</tr><tr>";
   for(var x=0; x<temps.length; x++){
