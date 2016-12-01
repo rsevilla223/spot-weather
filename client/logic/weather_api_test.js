@@ -298,7 +298,7 @@ function(err, data) {
       largest = data.list[i].dt_txt.substring(8,10);
       //console.log("Total temp is " + temptotal/count);
       if (temptotal > 0){
-        var tempObject = {temp:temptotal/count, date:data.list[i-1].dt_txt};
+        var tempObject = {temp:temptotal/count, date:data.list[i-1].dt_txt, forecast:data.list[i-1].weather[0].main};
         temps.push(tempObject);
       }
       temptotal = 0;
@@ -320,8 +320,11 @@ function(err, data) {
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date(temps[x].date);
     htmlText += "<th class='daytemps'>"+ days[loopDate.getDay()] + "</th>";//The loop creates one of these lines for each day
+    htmlText += "<td>" + "icon" + "</td>";
+    htmlText += "<td>" + temps[x].forecast + "</td>";
+    htmlText += "<td>" + Math.round(temps[x].temp) +"&#176;"+"F"+ "</td>";
   }
-  htmlText += "</tr><tr>";
+  /*htmlText += "</tr><tr>";
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date (temps[x].date);
     htmlText += "<td>" + "icon" + "</td>";
@@ -330,7 +333,7 @@ function(err, data) {
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date(temps[x].date);
     htmlText += "<td>" + Math.round(temps[x].temp) +"&#176;"+"F"+ "</td>";
-  }
+  }*/
   htmlText += "</tr>"
 
 

@@ -38,8 +38,7 @@ function(err,data) {
     preview:data.tracks.items[i].preview_url};
     tracks.push(track_object);
 
-    htmlText += "<li class='track_info' id='" +i+"' style='color:white;' track_url='"+data.tracks.items[i].preview_url+"' artist_name='"+data.tracks.items[i].artists[0].name+"' song_name='"+data.tracks.items[i].name+"' ondblclick='createAndPlay(getTrackUrl("+i+"), getTrackObject("+i+"));' track_number="+i+">" + track_string + "</li>";
-
+    htmlText += "<li class='track_info' id='" +i+"' style='color:white;' track_url='"+data.tracks.items[i].preview_url+"' artist_name='"+data.tracks.items[i].artists[0].name+"' song_name='"+data.tracks.items[i].name+"' artwork_url='"+data.tracks.items[i].album.images[1].url+"' ondblclick='createAndPlay(getTrackUrl("+i+"), getTrackObject("+i+"));' track_number="+i+">" + track_string + "</li>";
 
   }
 
@@ -59,7 +58,8 @@ var getTrackUrl = function(track_number) {
 
 var getTrackObject = function(track_number) {
   var track_object = {artist_name: document.getElementById(""+track_number+"").getAttribute('artist_name'),
-                      song_name: document.getElementById(""+track_number+"").getAttribute('song_name')};
+                      song_name: document.getElementById(""+track_number+"").getAttribute('song_name'),
+                      artwork_url: document.getElementById(""+track_number+"").getAttribute('artwork_url')};
   return track_object;
 }
 
@@ -69,7 +69,10 @@ var createAndPlay = function(audio_url, track_object){
   console.log("running createAndPlay for " + audio_url);
 
   //var audioObject = createAudio(audio_url);
-  htmlText += '<p style="color:white;">Now Playing: '+track_object.artist_name+" "+track_object.song_name+'</p>';
+  htmlText += '<img class="album_artwork" src="'+track_object.artwork_url+'">'
+  htmlText += '<p style="color:white;">Now Playing:</p>';
+  htmlText += '<p style="color:white;">'+track_object.song_name+'</p>';
+  htmlText += '<p style="color:white;">'+track_object.artist_name+'</p>';
   htmlText += '<audio controls autoplay="true">';
   htmlText += '<source src="'+audio_url+'" type="audio/mp3">';
   htmlText += '</audio>';
