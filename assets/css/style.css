@@ -195,29 +195,77 @@ li a:hover:not(.active) {
 }
 /* end slideout menu option */
 
-/* weather container styling */
+/* weather card styling */
+/* background image styling */
+.center_info {
+  vertical-align: middle;
+  margin: auto;
+  width: 98%;
+  min-width: 800px;
+  height: 500px;
+  background-size: cover;
+  border-radius: 20px;
+}
+/*weather container styling*/
 .weather_container {
-    background-color: rgba(97, 97, 97, 0.13);
+    background-color: rgba(97, 97, 97, 0.20);
     text-align: center;
     line-height: 40px;
     vertical-align: middle;
-    top: 10%;
     bottom: auto;
     right: 0px;
     left: 30%;
-    width: 40%;
-    height: 220px;
+    width: 800px;
+    height: 100%;
     margin: auto;
-    padding-top: 10px;
     color: #ffffff;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
-.weather_container {
-  margin-top: 0;
+.todays_weather {
+  width: 800px;
+  height: 300px;
+}
+.weather_icon {
+  width: 400px;
+  height: 300px;
+  margin: 0;
+  float: left;
+}
+.today_forecast {
+  width: 400px;
+  height: 300px;
+  margin-left: 400px;
+}
+.day {
+  width: 100%;
+  font-size: 25px;
+  padding: none;
+  margin-top: : 10px;
+  padding-top: 10px;
+}
+.region {
+  width: 100%;
+  font-size: 40px;
+  margin-top: 10px;
+}
+.temperature {
   margin-bottom: 0;
+  font-size: 70px;
+  width: 100%;
+  height: 75px;
+  margin-top: 35px;
 }
-
+.forecast {
+  font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.sentence {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
 /*5 day weather display styling*/
 .dayweather_display {
   background-color: transparent;
@@ -228,12 +276,11 @@ li a:hover:not(.active) {
   bottom: auto;
   right: 0px;
   left: 30%;
-  width: 50%;
+  width: 100%;
   height: 90px;
   margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: red;
+  margin-top: 50px;
+  margin-bottom: 0px;
   padding: 0px;
 }
 
@@ -247,7 +294,6 @@ table {
     border-bottom: none;
     border-left: none;
     border-right: none;
-    border-radius: 5px;
     border-color: black;
 }
 
@@ -257,9 +303,8 @@ td {
     text-align: center;
     padding: 0px;
     width: 105px;
-    height: 20px;
-    border-top: none;
-    border-bottom: none;
+    height: 25px;
+    border: none;
     font-size: 40px;
     padding-bottom: 10px;
     border-color: black;
@@ -271,8 +316,7 @@ th {
     text-align: center;
     padding: 0px;
     width: 105px;
-    border-bottom: none;
-    border-top: none;
+    border: none;
     border-color: black;
 }
 
@@ -300,6 +344,54 @@ th {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+/*begin Spotify card styling*/
+.spotify_info {
+  background-color: rgba(97, 97, 97, 0.13);
+  vertical-align: middle;
+  margin: auto;
+  width: 98%;
+  height: 900px;
+  border-radius: 20px;
+}
+.playlist_headline {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+.directions {
+  color: white;
+  text-align: center;
+  margin-top: 0;
+}
+.audio_player {
+  margin: auto;
+}
+.track_info {
+  list-style-type: none;
+  font-size: 20px;
+  padding: 5px 0px 5px 0px;
+  width: 96%;
+  cursor: pointer;
+}
+.track_info li {
+  width: 100%;
+  padding: 5px 0px 5px 5px;
+}
+.track_info:hover {
+  background-color: #3c9ebc;
+  width: 100%
+}
+.track_info:nth-child(even) {
+    background-color: #333333;
+    width: 100%;
+}
+.track_info:nth-child(even):hover {
+    background-color: #3c9ebc;
+    width: 100%;
+}
+/*end Spotify card styling*/
 /* begin slideout menu */
 .nav-side {
   position: fixed;
