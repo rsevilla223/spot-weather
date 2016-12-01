@@ -33,12 +33,17 @@ function(err,data) {
   htmlText += "<div class='spotify_display'>";
   var tracks = [];
   for (var i=0; i<data.tracks.items.length; i++){
-    var track_string = i+'. ' + data.tracks.items[i].name + ' ' + data.tracks.items[i].artists[0].name;
+    var track_string = i+1+'. ' + data.tracks.items[i].name + ' ' + data.tracks.items[i].artists[0].name;
     var track_object = {number:i, artist:data.tracks.items[i].artists[0].name, title:data.tracks.items[i].name,
     preview:data.tracks.items[i].preview_url};
     tracks.push(track_object);
 
-    htmlText += "<li class='track_info' id='" +i+"' style='color:white;' track_url='"+data.tracks.items[i].preview_url+"' artist_name='"+data.tracks.items[i].artists[0].name+"' song_name='"+data.tracks.items[i].name+"' artwork_url='"+data.tracks.items[i].album.images[1].url+"' ondblclick='createAndPlay(getTrackUrl("+i+"), getTrackObject("+i+"));' track_number="+i+">" + track_string + "</li>";
+    htmlText += "<li class='track_info' id='"
+     +i+"' style='color:white;' track_url='"+data.tracks.items[i].preview_url+"' artist_name='"
+     +data.tracks.items[i].artists[0].name+"' song_name='"+data.tracks.items[i].name
+     +"' artwork_url='"+data.tracks.items[i].album.images[1].url
+     +"' ondblclick='createAndPlay(getTrackUrl("+i+"), getTrackObject("+i+"));' track_number="+i+">"
+     + track_string +"<FORM METHOD='LINK' ACTION='"+data.tracks.items[i].external_urls.spotify+"'><INPUT TYPE='submit' VALUE='Listen on Spotify'></FORM></li>";
 
   }
 
