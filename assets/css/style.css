@@ -380,7 +380,7 @@ th {
 .track_info {
   list-style-type: none;
   font-size: 20px;
-  padding: 5px 0px 5px 10px;
+  padding: 5px 0px 5px 0px;
   width: 100%;
   min-width: 50%;
   height: 31.3px;
@@ -429,6 +429,7 @@ th {
 .song {
   align: right;
   display: inline;
+  margin-left: 10px;
 }
 .song_title {
   align: right;
