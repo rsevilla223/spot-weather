@@ -380,7 +380,7 @@ th {
 .track_info {
   list-style-type: none;
   font-size: 20px;
-  padding: 5px 0px 5px 0px;
+  padding: 5px 0px 5px 10px;
   width: 100%;
   min-width: 50%;
   height: 31.3px;
