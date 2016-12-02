@@ -183,9 +183,11 @@ function(err, data) {
     case "Thunderstorm":
       var forecast_sentence = "It's stormy. Be careful outside today.";
       document.getElementById("center_info").style.backgroundImage = "url('../../media/images/thunderstorm.jpeg')";
+      break;
     case "Drizzle":
       var forecast_sentence = "It's drizzling. You might need a raincoat today.";
-document.getElementById("center_info").style.backgroundImage = "url('../../media/images/drizzle.jpg')";
+      document.getElementById("center_info").style.backgroundImage = "url('../../media/images/drizzle.jpg')";
+      break;
     case "Additional":
       switch (data.weather[0].description) {
         case "calm":
