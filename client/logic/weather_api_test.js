@@ -320,8 +320,20 @@ function(err, data) {
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date(temps[x].date);
     htmlText += "<th class='daytemps'>"+ days[loopDate.getDay()] + "</th>";//The loop creates one of these lines for each day
+  }
+  htmlText += "</tr><tr>";
+  for(var x=0; x<temps.length; x++){
+    var loopDate = new Date(temps[x].date);
     htmlText += "<td>" + "icon" + "</td>";
-    htmlText += "<td>" + temps[x].forecast + "</td>";
+  }
+  htmlText += "</tr><tr>";
+  for(var x=0; x<temps.length; x++){
+    var loopDate = new Date(temps[x].date);
+    htmlText += "<td class='dayforecast'>" + temps[x].forecast + "</td>";
+  }
+  htmlText += "</tr><tr>";
+  for(var x=0; x<temps.length; x++){
+    var loopDate = new Date(temps[x].date);
     htmlText += "<td>" + Math.round(temps[x].temp) +"&#176;"+"F"+ "</td>";
   }
   /*htmlText += "</tr><tr>";

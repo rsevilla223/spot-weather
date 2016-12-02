@@ -49,7 +49,7 @@ input[type=text] {
   left: 15%;
 }
 
-input[type=submit] {
+.zipcodeSubmit {
     background-color: #27333c;
     border: none;
     color: white;
@@ -202,29 +202,31 @@ li a:hover:not(.active) {
   margin: auto;
   width: 98%;
   min-width: 800px;
-  height: 500px;
+  height: 550px;
   background-size: cover;
   border-radius: 20px;
 }
 /*weather container styling*/
 .weather_container {
-    background-color: rgba(97, 97, 97, 0.20);
+    background-color: rgba(97, 97, 97, 0.25);
     text-align: center;
     line-height: 40px;
     vertical-align: middle;
     bottom: auto;
     right: 0px;
     left: 30%;
-    width: 800px;
+    width: 100%;
+    min-width: 800px;
     height: 100%;
     margin: auto;
     color: #ffffff;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .todays_weather {
   width: 800px;
   height: 300px;
+  margin: auto;
 }
 .weather_icon {
   width: 400px;
@@ -276,8 +278,8 @@ li a:hover:not(.active) {
   bottom: auto;
   right: 0px;
   left: 30%;
-  width: 100%;
-  height: 90px;
+  width: 800px;
+  height: 120px;
   margin: auto;
   margin-top: 50px;
   margin-bottom: 0px;
@@ -324,6 +326,11 @@ th {
   color: white;
   width: 20px;
 }
+.dayforecast {
+  color: white;
+  width: 20px;
+  font-size: 25px;
+}
 /* end 5 day weather display styling */
 
 /* update zipcode box */
@@ -350,7 +357,7 @@ th {
   vertical-align: middle;
   margin: auto;
   width: 98%;
-  height: 900px;
+  height: 950px;
   border-radius: 20px;
 }
 .playlist_headline {
@@ -367,12 +374,16 @@ th {
 }
 .audio_player {
   margin: auto;
+  width: 800px;
+  height: 250;
 }
 .track_info {
   list-style-type: none;
   font-size: 20px;
   padding: 5px 0px 5px 0px;
-  width: 96%;
+  width: 100%;
+  min-width: 50%;
+  height: 31.3px;
   cursor: pointer;
 }
 .track_info li {
@@ -390,6 +401,66 @@ th {
 .track_info:nth-child(even):hover {
     background-color: #3c9ebc;
     width: 100%;
+}
+/* Now Playing styling*/
+.now_playing {
+  width: 300px;
+  margin-right: 80px;
+  float: right;
+  display: inline;
+}
+.playing {
+  font-size: 30px;
+  font-weight: bold;
+}
+.playing_song {
+  font-size: 20px;
+  font-weight: bold;
+}
+.playing_artist {
+  font-size: 20px;
+}
+.album_artwork {
+  width: 224.67px;
+  height: 224.67px;
+  margin-left: 150px;
+}
+/*divs to add separate styling to song title and artist name*/
+.song {
+  align: right;
+  display: inline;
+}
+.song_title {
+  align: right;
+  width: 50%;
+  display: inline;
+  font-weight: bold;
+}
+.artist {
+  display: inline;
+  font-size: 17px;
+}
+/*"Listen on spotify" button styling"*/
+.play_spotify {
+  float: right;
+  margin-right: 5px;
+}
+.to_spotify {
+  width: 158.3px;
+  display: inline;
+}
+
+.listen {
+  background-color: #27333c;
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: auto;
+  cursor: pointer;
+  border-radius: 5px;
 }
 /*end Spotify card styling*/
 /* begin slideout menu */
