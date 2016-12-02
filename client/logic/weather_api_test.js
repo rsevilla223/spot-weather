@@ -183,9 +183,11 @@ function(err, data) {
     case "Thunderstorm":
       var forecast_sentence = "It's stormy. Be careful outside today.";
       document.getElementById("center_info").style.backgroundImage = "url('../../media/images/thunderstorm.jpeg')";
+      break;
     case "Drizzle":
       var forecast_sentence = "It's drizzling. You might need a raincoat today.";
-document.getElementById("center_info").style.backgroundImage = "url('../../media/images/drizzle.jpeg')";
+      document.getElementById("center_info").style.backgroundImage = "url('../../media/images/drizzle.jpg')";
+      break;
     case "Additional":
       switch (data.weather[0].description) {
         case "calm":
@@ -298,7 +300,7 @@ function(err, data) {
       largest = data.list[i].dt_txt.substring(8,10);
       //console.log("Total temp is " + temptotal/count);
       if (temptotal > 0){
-        var tempObject = {temp:temptotal/count, date:data.list[i-1].dt_txt};
+        var tempObject = {temp:temptotal/count, date:data.list[i-1].dt_txt, forecast:data.list[i-1].weather[0].main};
         temps.push(tempObject);
       }
       temptotal = 0;
@@ -323,6 +325,21 @@ function(err, data) {
   }
   htmlText += "</tr><tr>";
   for(var x=0; x<temps.length; x++){
+    var loopDate = new Date(temps[x].date);
+    htmlText += "<td>" + "icon" + "</td>";
+  }
+  htmlText += "</tr><tr>";
+  for(var x=0; x<temps.length; x++){
+    var loopDate = new Date(temps[x].date);
+    htmlText += "<td class='dayforecast'>" + temps[x].forecast + "</td>";
+  }
+  htmlText += "</tr><tr>";
+  for(var x=0; x<temps.length; x++){
+    var loopDate = new Date(temps[x].date);
+    htmlText += "<td>" + Math.round(temps[x].temp) +"&#176;"+"F"+ "</td>";
+  }
+  /*htmlText += "</tr><tr>";
+  for(var x=0; x<temps.length; x++){
     var loopDate = new Date (temps[x].date);
     htmlText += "<td>" + "icon" + "</td>";
   }
@@ -330,7 +347,7 @@ function(err, data) {
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date(temps[x].date);
     htmlText += "<td>" + Math.round(temps[x].temp) +"&#176;"+"F"+ "</td>";
-  }
+  }*/
   htmlText += "</tr>"
 
 
