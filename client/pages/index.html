@@ -13,7 +13,21 @@
 
 		<!-- plugin for weather API -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<meta name="google-signin-client_id" content="173450505509-7prr2g9o1teqt959mnpevkvbavqlfin8.apps.googleusercontent.com">
+
 	</head>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script>
+    function onLoad() {
+			console.log("loading");
+      gapi.load('auth2', function() {
+        gapi.auth2.init();
+      });
+    }
+
+		onLoad();
+  </script>
 
 
 	<body>
@@ -23,17 +37,23 @@
 			<div class="container">
 				<!-- removed div class sidebar and id sidebar-->
 						<div class="profile_pane">
-							<img class="profile_picture" src="../../media/images/man.svg">
+							<img class="profile_picture" id="profile_pic" src="../../media/images/man.svg">
 							<div class="user_info">
-								<li>Noah</li>
-								<li style="font-size:10pt">Mount Ararat</li>
-							</div>
+								<li id="sidebar_user">Noah</li>
+								<li style="font-size:10pt">Chicago, IL</li>
 
+
+							</div>
+							<script type="text/javascript">
+								document.getElementById('profile_pic').src = sessionStorage.user_avatar;
+								document.getElementById('sidebar_user').innerHTML = sessionStorage.currentUser;
+							</script>
 						</div>
 
 						<div class="menu_options">
 							<li><a href="my_info.html">My Info</a></li>
 							<li><a href="settings.html">Settings</a></li>
+							<a href="#" onclick="signOut();">Sign out</a>
 						</div>
 					</div>
 			</div>
@@ -68,6 +88,9 @@
 		<script src="../../client/logic/zipcode_errors.js"></script>
 		<script src="../../client/logic/spotify.js"></script>
 		<script src="../../bower_components/plyr/dist/plyr.js"></script>
+		<script src="../../client/logic/google_sign_in.js"></script>
+
+
 		<script>plyr.setup();</script>
 	</body>
 

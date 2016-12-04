@@ -8,6 +8,7 @@ function onSignIn(googleUser) {
   sessionStorage.currentUser= profile.getName();
   sessionStorage.user_avatar= profile.getImageUrl();
   console.log(sessionStorage.currentUser);
+  console.log(sessionStorage.user_avatar);
 
 }
 
@@ -18,5 +19,7 @@ function signOut() {
   auth2.signOut().then(function () {
     console.log('User signed out.');
   });
-  sessionStorage.removeItem(currentUser);
+  sessionStorage.clear();
+  //sessionStorage.removeItem(currentUser);
+  //sessionStorage.removeItem(user_avatar);
 }
