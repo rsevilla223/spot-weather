@@ -41,7 +41,7 @@ input[type=text] {
 }
 
 .footer{
-  position: fixed;
+  position: absolute;
   margin-top: 5%;
   font-size: 30pt;
   text-align: center;
@@ -64,7 +64,7 @@ input[type=text] {
 }
 
 .zipForm {
-  position: fixed;
+  position: absolute;
   padding: 0% 0%;
   width: 100%;
   display: block;
@@ -200,12 +200,13 @@ li a:hover:not(.active) {
 .center_info {
   vertical-align: middle;
   margin: auto;
-  width: 98%;
-  min-width: 800px;
+  max-width: 98%;
+  min-width: 300px;
   height: 550px;
   background-size: cover;
   border-radius: 20px;
 }
+
 /*weather container styling*/
 .weather_container {
     background-color: rgba(97, 97, 97, 0.31);
@@ -215,8 +216,8 @@ li a:hover:not(.active) {
     bottom: auto;
     right: 0px;
     left: 30%;
-    width: 100%;
-    min-width: 800px;
+    max-width: 100%;
+    min-width: 250px;
     height: 100%;
     margin: auto;
     color: #ffffff;
@@ -224,33 +225,40 @@ li a:hover:not(.active) {
 }
 
 .todays_weather {
-  width: 800px;
+  max-width: 800px;
+  min-width: 250px;
   height: 300px;
   margin: auto;
 }
+
 .weather_icon {
-  width: 400px;
+  max-width: 400px;
+  min-width: 250;
   height: 300px;
   margin: 0;
   float: left;
 }
 .today_forecast {
-  width: 400px;
+  max-width: 400px;
+  min-width: 250px;
   height: 300px;
   margin-left: 400px;
 }
 .day {
-  width: 100%;
+  max-width: 400px;
+  min-width: 250px;
   font-size: 25px;
   padding: none;
   margin-top: : 10px;
   padding-top: 10px;
 }
+
 .region {
   width: 100%;
   font-size: 40px;
   margin-top: 10px;
 }
+
 .temperature {
   margin-bottom: 0;
   font-size: 70px;
@@ -258,6 +266,7 @@ li a:hover:not(.active) {
   height: 75px;
   margin-top: 35px;
 }
+
 .forecast {
   font-size: 50px;
   margin-top: 10px;
@@ -268,6 +277,7 @@ li a:hover:not(.active) {
   margin-top: 10px;
   margin-bottom: 5px;
 }
+
 /*5 day weather display styling*/
 .dayweather_display {
   background-color: transparent;
@@ -278,7 +288,8 @@ li a:hover:not(.active) {
   bottom: auto;
   right: 0px;
   left: 30%;
-  width: 800px;
+  max-width: 800px;
+  min-width: 250px;
   height: 120px;
   margin: auto;
   margin-top: 50px;
@@ -299,6 +310,7 @@ table {
     border-color: black;
 }
 
+/* defines row in table */
 td {
     color: white;
     border: 1px solid #27333c;
@@ -312,6 +324,7 @@ td {
     border-color: black;
 }
 
+/* defines header cell */
 th {
     color: white;
     border: 1px solid #27333c;
@@ -374,9 +387,12 @@ th {
 }
 .audio_player {
   margin: auto;
-  width: 800px;
+  max-width: 800px;
+  min-width: 250px;
   height: 250;
 }
+
+
 .track_info {
   list-style-type: none;
   font-size: 20px;
@@ -386,6 +402,18 @@ th {
   height: 31.3px;
   cursor: pointer;
 }
+@media (max-width: 590px) {
+  .track_info {
+    list-style-type: none;
+    font-size: 12px;
+    padding: 5px 0px 5px 0px;
+    width: 100%;
+    min-width: 50%;
+    height: 31.3px;
+    cursor: pointer;
+  }
+}
+
 .track_info li {
   width: 100%;
   padding: 5px 0px 5px 5px;
@@ -409,6 +437,16 @@ th {
   float: right;
   display: inline;
 }
+@media (max-width: 775px) {
+  .now_playing {
+    max-width: 800px;
+    min-width: 250px;
+    float: none;
+    display: inline;
+    margin-left: 50px;
+  }
+}
+
 .playing {
   font-size: 30px;
   font-weight: bold;
@@ -425,6 +463,14 @@ th {
   height: 224.67px;
   margin-left: 150px;
 }
+@media (max-width: 775px) {
+  .album_artwork {
+    width: 224.67px;
+    height: 224.67px;
+    margin-left: auto;
+  }
+}
+
 /*divs to add separate styling to song title and artist name*/
 .song {
   align: right;
@@ -441,6 +487,13 @@ th {
   display: inline;
   font-size: 17px;
 }
+@media (max-width: 590px) {
+  .artist {
+    display: inline;
+    font-size: 9px;
+  }
+}
+
 /*"Listen on spotify" button styling"*/
 .play_spotify {
   float: right;
