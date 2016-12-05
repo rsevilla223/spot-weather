@@ -24,9 +24,18 @@ var getForecast = function() {
 
 var main_forecast = getForecast();
 
+//sessionStorage.genre = "%20genre:%22metal%22";
+//%20genre:%22southern%20hip%20hop%22
 
+if (sessionStorage.genre == null) {
+  var genre = "%20genre:%22jazz%22";
+}
 
-  getJSON("https://api.spotify.com/v1/search?q="+main_forecast+"&type=track",
+else {
+  var genre = sessionStorage.genre;
+}
+
+  getJSON("https://api.spotify.com/v1/search?q="+main_forecast+genre+"&type=track",
 //getJSON("https://api.spotify.com/v1/search?q=mist&type=track",
 function(err,data) {
   console.log(data);
@@ -60,6 +69,12 @@ function(err,data) {
 
 
 })
+}, delay);
+
+var changeGenre = function(genre) {
+  sessionStorage.genre = "%20genre:%22"+genre+"%22";
+  console.log("genre changed to: " + genre);
+}
 
 var getTrackUrl = function(track_number) {
   var track_url = document.getElementById(""+track_number+"").getAttribute('track_url');
@@ -114,5 +129,3 @@ var pauseAudio = function(audioObject){
 
 var audioUrl = 'https://p.scdn.co/mp3-preview/f9f00efa0d95d2db76f1a95a518f5f0df0520b59';
 var audioObject = createAudio(audioUrl);
-
-}, delay);
