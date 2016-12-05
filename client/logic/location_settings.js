@@ -93,6 +93,12 @@ function(err, data) {
 });
   };
 
+//change location setting--still editing
+var changeLocation = function(location) {
+  //sessionStorage.genre = "%20genre:%22"+genre+"%22";
+  $('.dropbtn').html("Change location to: "+ data.name);
+  console.log("location changed to: " + data.name);
+}
 
 };
 

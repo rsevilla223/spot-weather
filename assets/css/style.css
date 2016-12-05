@@ -778,7 +778,34 @@ input:checked + .slider:before {
 	float: right;
 	cursor: pointer;
 }
+/*add-button styling*/
+.add-button {
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 0px 5px .7px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+	border-radius: 50%;
+	float: right;
+	cursor: pointer;
+}
 
+.add-button:hover {
+	background-color: #3c9ebc;
+  border: none;
+  color: white;
+  padding: 0px 5px .7px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+	border-radius: 50%;
+	float: right;
+	cursor: pointer;
+}
 /* delete-button styling */
 .delete-button {
   background-color: gray;
