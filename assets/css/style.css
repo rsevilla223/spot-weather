@@ -200,11 +200,9 @@ li a:hover:not(.active) {
 .center_info {
   vertical-align: middle;
   margin: auto;
-
   width: 98%;
   min-width: 800px;
   height: 590px;
-over;
   border-radius: 20px;
 }
 
