@@ -27,7 +27,13 @@ var main_forecast = getForecast();
 //sessionStorage.genre = "%20genre:%22metal%22";
 //%20genre:%22southern%20hip%20hop%22
 
-var genre = sessionStorage.genre;
+if (sessionStorage.genre == null) {
+  var genre = "%20genre:%22jazz%22";
+}
+
+else {
+  var genre = sessionStorage.genre;
+}
 
   getJSON("https://api.spotify.com/v1/search?q="+main_forecast+genre+"&type=track",
 //getJSON("https://api.spotify.com/v1/search?q=mist&type=track",
