@@ -200,10 +200,9 @@ li a:hover:not(.active) {
 .center_info {
   vertical-align: middle;
   margin: auto;
-  max-width: 98%;
-  min-width: 300px;
-  height: 550px;
-  background-size: cover;
+  width: 98%;
+  min-width: 800px;
+  height: 590px;
   border-radius: 20px;
 }
 
@@ -237,6 +236,9 @@ li a:hover:not(.active) {
   height: 300px;
   margin: 0;
   float: left;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
 }
 .today_forecast {
   max-width: 400px;
@@ -295,6 +297,20 @@ li a:hover:not(.active) {
   margin-top: 50px;
   margin-bottom: 0px;
   padding: 0px;
+}
+/*image sizing for icons*/
+.icon_img {
+  height: 80px;
+}
+.icon {
+  color: white;
+  border: 1px solid #27333c;
+  text-align: center;
+  padding: 0px;
+  width: 105px;
+  height: 80px;
+  border: none;
+  font-size: 40px;
 }
 
 table {
