@@ -21,8 +21,24 @@ function getUrlVars() {
   return vars;
   }
 
-var zipcode = getUrlVars()["enteredZipcode"];//Pulls the zipcode from the url at the top that was setup by the submit zipcode page
-console.log(zipcode);
+  function setZipcode(zipcode) {
+    sessionStorage.zipcode = zipcode;
+  }
+
+  function getZipcode(){
+    zipcode = sessionStorage.zipcode;
+    return zipcode;
+  }
+
+if (getUrlVars()["enteredZipcode"]) {
+  setZipcode(getUrlVars()["enteredZipcode"]);
+}
+
+var prezipcode = getUrlVars()["enteredZipcode"];//Pulls the zipcode from the url at the top that was setup by the submit zipcode page
+console.log(prezipcode);
+
+//setZipcode(prezipcode);
+var zipcode = getZipcode();
 
 var callUrl;
 
