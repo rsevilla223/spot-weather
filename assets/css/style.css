@@ -391,6 +391,8 @@ th {
   min-width: 250px;
   height: 250;
 }
+
+
 .track_info {
   list-style-type: none;
   font-size: 20px;
@@ -435,6 +437,16 @@ th {
   float: right;
   display: inline;
 }
+@media (max-width: 775px) {
+  .now_playing {
+    max-width: 800px;
+    min-width: 250px;
+    float: none;
+    display: inline;
+    margin-left: 50px;
+  }
+}
+
 .playing {
   font-size: 30px;
   font-weight: bold;
@@ -451,6 +463,14 @@ th {
   height: 224.67px;
   margin-left: 150px;
 }
+@media (max-width: 775px) {
+  .album_artwork {
+    width: 224.67px;
+    height: 224.67px;
+    margin-left: auto;
+  }
+}
+
 /*divs to add separate styling to song title and artist name*/
 .song {
   align: right;
