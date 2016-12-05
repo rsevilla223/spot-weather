@@ -233,6 +233,9 @@ li a:hover:not(.active) {
   height: 300px;
   margin: 0;
   float: left;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
 }
 .today_forecast {
   width: 400px;
