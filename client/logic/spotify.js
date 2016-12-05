@@ -24,9 +24,12 @@ var getForecast = function() {
 
 var main_forecast = getForecast();
 
+//sessionStorage.genre = "%20genre:%22metal%22";
+//%20genre:%22southern%20hip%20hop%22
 
+var genre = sessionStorage.genre;
 
-  getJSON("https://api.spotify.com/v1/search?q="+main_forecast+"&type=track",
+  getJSON("https://api.spotify.com/v1/search?q="+main_forecast+genre+"&type=track",
 //getJSON("https://api.spotify.com/v1/search?q=mist&type=track",
 function(err,data) {
   console.log(data);
@@ -61,6 +64,11 @@ function(err,data) {
 
 })
 }, delay);
+
+var changeGenre = function(genre) {
+  sessionStorage.genre = "%20genre:%22"+genre+"%22";
+  console.log("genre changed to: " + genre);
+}
 
 var getTrackUrl = function(track_number) {
   var track_url = document.getElementById(""+track_number+"").getAttribute('track_url');
