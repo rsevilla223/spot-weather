@@ -215,8 +215,8 @@ li a:hover:not(.active) {
     bottom: auto;
     right: 0px;
     left: 30%;
-    max-width: 100%;
-    min-width: 250px;
+    width: 100%;
+    min-width: 800px;
     height: 100%;
     margin: auto;
     color: #ffffff;
@@ -225,14 +225,12 @@ li a:hover:not(.active) {
 
 .todays_weather {
   max-width: 800px;
-  min-width: 250px;
   height: 300px;
   margin: auto;
 }
 /*Hey*/
 .weather_icon {
-  max-width: 400px;
-  min-width: 250;
+  width: 400px;
   height: 300px;
   margin: 0;
   float: left;
@@ -242,13 +240,11 @@ li a:hover:not(.active) {
 }
 .today_forecast {
   max-width: 400px;
-  min-width: 250px;
   height: 300px;
   margin-left: 400px;
 }
 .day {
-  max-width: 400px;
-  min-width: 250px;
+  width: 100%;
   font-size: 25px;
   padding: none;
   margin-top: : 10px;
