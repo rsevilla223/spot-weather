@@ -96,7 +96,7 @@ function(err, data) {
       document.getElementById("center_info").style.backgroundImage = "url('../../media/images/fog.jpg')";
       document.getElementById("weather_icon").style.backgroundImage = "url('../../media/icons/fog.svg')";
       break;
-    case "mist":
+    case "Mist":
       var forecast_sentence = "It's a misty day.";
       document.getElementById("center_info").style.backgroundImage = "url('../../media/images/mist.jpeg')";
       document.getElementById("weather_icon").style.backgroundImage = "url('../../media/icons/fog.svg')";
@@ -371,7 +371,51 @@ function(err, data) {
   htmlText += "</tr><tr>";
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date(temps[x].date);
-    htmlText += "<td>" + "icon" + "</td>";
+    htmlText += "<td class='icon'>";
+     switch (temps[x].forecast) {
+       case "Haze":
+       htmlText += "<img class='icon_img' src='../../media/icons/hazy.svg'>";
+         break;
+       case "Clouds":
+          htmlText += "<img class='icon_img' src='../../media/icons/cloudy.svg'>";
+          break;
+       case "Snow":
+          htmlText += "<img class='icon_img' src='../../media/icons/flurries.svg'>";
+          break;
+       case "Smoke":
+            htmlText += "<img class='icon_img' src='../../media/icons/unknown.svg'>";
+            break;
+        case "Fog":
+           htmlText += "<img class='icon_img' src='../../media/icons/unknown.svg'>";
+           break;
+        case "Mist":
+            htmlText += "<img class='icon_img' src='../../media/icons/fog.svg'>";
+            break;
+        case "Clear":
+            htmlText += "<img class='icon_img' src='../../media/icons/clear.svg'>";
+            break;
+        case "Rain":
+            htmlText += "<img class='icon_img' src='../../media/icons/rain.svg'>";
+            break;
+        case "Atmosphere":
+            htmlText += "<img class='icon_img' src='../../media/icons/unknown.svg'>";
+            break;
+        case "Extreme":
+            htmlText += "<img class='icon_img' src='../../media/icons/chancetstorms.svg'>";
+            break;
+        case "Thunderstorm":
+            htmlText += "<img class='icon_img' src='../../media/icons/chancetstorms.svg'>";
+            break;
+        case "Drizzle":
+            htmlText += "<img class='icon_img' src='../../media/icons/chancerain.svg'>";
+            break;
+        case "Additional":
+            htmlText += "<img class='icon_img' src='../../media/icons/unknown.svg'>";
+            break;
+       default:
+         htmlText += "<img class='icon_img' src='../../media/icons/fog.svg'>";
+     };
+     htmlText += "</td>";
   }
   htmlText += "</tr><tr>";
   for(var x=0; x<temps.length; x++){

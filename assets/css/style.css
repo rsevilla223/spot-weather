@@ -202,7 +202,7 @@ li a:hover:not(.active) {
   margin: auto;
   width: 98%;
   min-width: 800px;
-  height: 550px;
+  height: 590px;
   background-size: cover;
   border-radius: 20px;
 }
@@ -287,6 +287,20 @@ li a:hover:not(.active) {
   margin-top: 50px;
   margin-bottom: 0px;
   padding: 0px;
+}
+/*image sizing for icons*/
+.icon_img {
+  height: 80px;
+}
+.icon {
+  color: white;
+  border: 1px solid #27333c;
+  text-align: center;
+  padding: 0px;
+  width: 105px;
+  height: 80px;
+  border: none;
+  font-size: 40px;
 }
 
 table {
