@@ -302,7 +302,7 @@ table {
     color: white;
     border-collapse: collapse;
     width: 100%;
-    background-color: #3c9ebc;
+    background-color: rgba(60, 158, 188, 0.2);
     border-top: none;
     border-bottom: none;
     border-left: none;
@@ -637,7 +637,7 @@ input[type="radio"] + label span {
     height:19px;
     margin:-1px 4px 0 0;
     vertical-align:middle;
-    background:url('/../../media/images/check_radio_sheet.png') -38px top no-repeat;
+    background:url('../../media/images/check_radio_sheet.png') -38px top no-repeat;
     cursor:pointer;
 }
 input[type="radio"]:checked + label span {
@@ -646,7 +646,7 @@ input[type="radio"]:checked + label span {
   height: 19px;
   margin: -1px 4px 0 0;
   vertical-align: middle;
-  background:url('/../../media/images/check_radio_sheet.png') -57px top no-repeat;
+  background:url('../../media/images/check_radio_sheet.png') -57px top no-repeat;
   cursor: pointer;
 }
 
@@ -842,6 +842,7 @@ input:checked + .slider:before {
     display: block;
     margin: 0;
     background-color: lightgray;
+    cursor: pointer;
 }
 
 /* Change color of dropdown links on hover */

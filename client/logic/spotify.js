@@ -73,6 +73,7 @@ function(err,data) {
 
 var changeGenre = function(genre) {
   sessionStorage.genre = "%20genre:%22"+genre+"%22";
+  $('.dropbtn').html("&#9776 &nbsp; Genre: "+ genre);
   console.log("genre changed to: " + genre);
 }
 
