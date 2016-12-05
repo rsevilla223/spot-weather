@@ -82,9 +82,13 @@
 			<li class="list-category">Music</li>
 				<li class="dropdown-list">
 					<div class="dropdown">
-						<button class="dropbtn">&#9776 &nbsp; Genre</button>
+						<button class="dropbtn" id="dropbtn">&#9776 &nbsp; Genre</button>
   						<div class="dropdown-content">
+								<p onclick="changeGenre('alternative')">Alternative</p>
     						<p onclick="changeGenre('classical')">Classical</p>
+								<p onclick="changeGenre('country')">Country</p>
+								<p onclick="changeGenre('jazz')">Jazz</p>
+								<p onclick="changeGenre('metal')">Metal</p>
     						<p onclick="changeGenre('pop')">Pop</p>
     						<p onclick="changeGenre('rap')">Rap</p>
   					</div>
@@ -130,7 +134,7 @@
 			</li>
 	</ul>
 </div>
-
+	<a href="index.html"><input type="button" value="Submit changes" class="zipcodeSubmit"/></a>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="../../client/logic/sidebar.js"></script>
