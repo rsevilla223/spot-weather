@@ -60,6 +60,7 @@ function(err,data) {
 
 
 })
+}, delay);
 
 var getTrackUrl = function(track_number) {
   var track_url = document.getElementById(""+track_number+"").getAttribute('track_url');
@@ -114,5 +115,3 @@ var pauseAudio = function(audioObject){
 
 var audioUrl = 'https://p.scdn.co/mp3-preview/f9f00efa0d95d2db76f1a95a518f5f0df0520b59';
 var audioObject = createAudio(audioUrl);
-
-}, delay);
