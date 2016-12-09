@@ -896,10 +896,19 @@ input:checked + .slider:before {
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
+    background: #122f38;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
     background: #3c9ebc;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
+::-webkit-scrollbar-thumb:active {
+  background: #3c9ebc;
+}
 ::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(255,0,0,0.4);
+	background: #122f38;
 }
 /*END SETTINGS STYLES*/
