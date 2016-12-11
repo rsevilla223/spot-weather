@@ -77,6 +77,10 @@ var changeGenre = function(genre) {
   console.log("genre changed to: " + genre);
 }
 
+var changeUnits = function(newunits) {
+  sessionStorage.units = newunits;
+};
+
 var getTrackUrl = function(track_number) {
   var track_url = document.getElementById(""+track_number+"").getAttribute('track_url');
   return track_url;

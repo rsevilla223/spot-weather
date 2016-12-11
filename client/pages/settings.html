@@ -52,17 +52,17 @@
 				<form>
 				<li class="sub-list">
 					<!-- Radio button input -->
-					<input class="radiobtn" type="radio" name="temp" id="c1" value="Fahrenheit" checked>
+					<input class="radiobtn" type="radio" name="temp" id="c1" value="Fahrenheit" onclick="changeUnits('fahrenheit')" checked>
 					<label for="c1"><span></span>Fahrenheit</label>
 				</li>
 				<li class="sub-list">
 					<!-- Radio button input -->
-					<input class="radiobtn" type="radio" name="temp" id="c2" value="Celsius">
+					<input class="radiobtn" type="radio" name="temp" id="c2" value="Celsius" onclick="changeUnits('celsius')">
 					<label for="c2"><span></span>Celsius</label>
 				</li>
 				<li class="sub-list">
 					<!-- Radio button input -->
-					<input class="radiobtn" type="radio" name="temp" id="c3" value="Kelvin">
+					<input class="radiobtn" type="radio" name="temp" id="c3" value="Kelvin" onclick="changeUnits('kelvin')">
 					<label for="c3"><span></span>Kelvin</label>
 				</li>
 			</form>
@@ -87,6 +87,7 @@
 								<p onclick="changeGenre('alternative')">Alternative</p>
     						<p onclick="changeGenre('classical')">Classical</p>
 								<p onclick="changeGenre('country')">Country</p>
+								<p onclick="changeGenre('indie')">Indie</p>
 								<p onclick="changeGenre('jazz')">Jazz</p>
 								<p onclick="changeGenre('metal')">Metal</p>
     						<p onclick="changeGenre('pop')">Pop</p>

@@ -881,17 +881,3 @@ input:checked + .slider:before {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
 /*END SETTINGS STYLES*/
-
-	background-color: #990033;
-  border: none;
-  color: white;
-  padding: 0px 5px .7px 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-	border-radius: 50%;
-	float: right;
-	cursor: pointer;
-}
-/* end settings styles */
