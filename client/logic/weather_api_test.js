@@ -56,7 +56,25 @@ else {
 
 
 //Here's where the actual API request takes place, notice how I'm appending the zipcode that the user submitted in the previous page to the URL
-getJSON(callUrl +"&us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
+var units = callUrl + "&us";
+
+//Changing the call based on temperature in settings
+switch (sessionStorage.units) {
+  case 'fahrenheit':
+    units+="&units=imperial";
+    break;
+  case 'celsius':
+    units+="&units=metric";
+    break;
+  case 'kelvin':
+    break;
+  default:
+    units+="&units=imperial";
+}
+
+units += "&appid=f7700f7f19f7a49c456299e65bb1edad";
+
+getJSON(units,
 function(err, data) {
   console.log(data);
   //sessionStorage.removeItem(forecast);
@@ -323,7 +341,21 @@ function(err, data) {
   htmlText += "<div class='weather_display'>";
   htmlText += "<p class='day'>"+ currentDay + "</p>";
   htmlText += "<p class='region'>"+data.name+"</p>";
-  htmlText += "<p class='temperature'>" +data.main.temp +"&#176;"+"F"+ "</p>";
+  htmlText += "<p class='temperature'>" +data.main.temp;
+  //Changing the units ending based on temperature unit selected
+  switch (sessionStorage.units) {
+    case 'fahrenheit':
+      htmlText += "&#176;" + "F" + "</p>";
+      break;
+    case 'celsius':
+      htmlText += "&#176;" + "C" + "</p>";
+      break;
+    case 'kelvin':
+      htmlText+= "K" +"</p>";
+      break;
+    default:
+      htmlText += "&#176;" + "F" +"</p>";
+  };
   htmlText += "<p class='forecast' id='mainforecast' spotforecast='"+data.weather[0].main+"'>" + data.weather[0].main + "</p>";
   htmlText += "<p class='sentence'>" + forecast_sentence + "</p>";
   htmlText += "</div>";
@@ -341,9 +373,25 @@ var forecastUrl = callUrl.substring(0,39) + "forecast" + callUrl.substring(46,ca
 console.log(forecastUrl);
 
 
+//5 day weather API
+var units = forecastUrl + "&us";
 
+//Changing the call based on temperature in settings
+switch (sessionStorage.units) {
+  case 'fahrenheit':
+    units+="&units=imperial";
+    break;
+  case 'celsius':
+    units+="&units=metric";
+    break;
+  case 'kelvin':
+    break;
+  default:
+    units+="&units=imperial";
+}
 
-getJSON(forecastUrl+"&us&units=imperial&appid=f7700f7f19f7a49c456299e65bb1edad",
+units += "&appid=f7700f7f19f7a49c456299e65bb1edad";
+getJSON(units,
 function(err, data) {
   console.log(data);
 
@@ -373,6 +421,7 @@ function(err, data) {
 
     //console.log("The temp for " + data.list[i].dt_txt + " is " + data.list[i].main.temp);
   }
+    console.log("length  "+temps.length)
 //This is where the forecast gets outputted to the page
   var htmlText = '';
 
@@ -441,8 +490,22 @@ function(err, data) {
   htmlText += "</tr><tr>";
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date(temps[x].date);
-    htmlText += "<td>" + Math.round(temps[x].temp) +"&#176;"+"F"+ "</td>";
+    htmlText += "<td>" + Math.round(temps[x].temp);
+    //Changing the units ending based on temperature unit selected
+    switch (sessionStorage.units) {
+      case 'fahrenheit':
+        htmlText += "&#176;" + "F" + "</td>";
+        break;
+      case 'celsius':
+        htmlText += "&#176;" + "C" + "</td>";
+        break;
+      case 'kelvin':
+        htmlText+= "K" +"</td>";
+        break;
+      default:
+        htmlText += "&#176;" + "F" +"</td>";
   }
+}
   /*htmlText += "</tr><tr>";
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date (temps[x].date);
