@@ -441,7 +441,7 @@ function(err, data) {
   htmlText += "</tr><tr>";
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date(temps[x].date);
-    htmlText += "<td>" + Math.round(temps[x].temp) +"&#176;"+"F"+ "</td>";
+    htmlText += "<td class='temp'>" + Math.round(temps[x].temp) +"&#176;"+"F"+ "</td>";
   }
   /*htmlText += "</tr><tr>";
   for(var x=0; x<temps.length; x++){
