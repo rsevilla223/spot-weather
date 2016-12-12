@@ -408,7 +408,7 @@ function(err, data) {
     if (data.list[i].dt_txt.substring(8,10) > largest || i+1 == data.list.length){
       largest = data.list[i].dt_txt.substring(8,10);
       //console.log("Total temp is " + temptotal/count);
-      if (temptotal > 0){
+      if (temptotal > 0 || temptotal < 0){
         var tempObject = {temp:temptotal/count, date:data.list[i-1].dt_txt, forecast:data.list[i-1].weather[0].main};
         temps.push(tempObject);
       }
