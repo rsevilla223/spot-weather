@@ -649,7 +649,6 @@ th {
   vertical-align: middle;
   margin: auto;
   width: 98%;
-  height: 950px;
   border-radius: 20px;
 }
 .playlist_headline {
@@ -667,35 +666,18 @@ th {
 .audio_player {
   margin: auto;
   max-width: 800px;
-  min-width: 350px;
+  min-width: 320px;
   height: 300;
 }
-@media (max-width: 800px) {
-  .audio_player {
-    width: 100%;
-    min-width: 320px;
-  }
-  }
 
 .track_info {
   list-style-type: none;
   font-size: 20px;
-  padding: 5px 0px 5px 0px;
+  padding: 10px 0px 10px 0px;
   width: 100%;
   min-width: 50%;
-  height: 31.3px;
   cursor: pointer;
-}
-@media (max-width: 590px) {
-  .track_info {
-    list-style-type: none;
-    font-size: 12px;
-    padding: 5px 0px 5px 0px;
-    width: 100%;
-    min-width: 50%;
-    height: 29px;
-    cursor: pointer;
-  }
+  min-height: 32px;
 }
 
 .track_info li {
@@ -765,22 +747,16 @@ th {
   align: right;
   display: inline;
   margin-left: 10px;
+  width: 90%;
 }
 .song_title {
   align: right;
-  width: 50%;
   display: inline;
   font-weight: bold;
 }
 .artist {
   display: inline;
   font-size: 17px;
-}
-@media (max-width: 590px) {
-  .artist {
-    display: inline;
-    font-size: 9px;
-  }
 }
 
 /*"Listen on spotify" button styling"*/
@@ -801,15 +777,11 @@ th {
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: 0;
   cursor: pointer;
   border-radius: 5px;
-}
-@media (max-width: 590px) {
-  .listen {
-    font-size: 12px;
-    padding: 5px 7px;
-  }
+  display: inline-block;
 }
 /*end Spotify card styling*/
 /* begin slideout menu */

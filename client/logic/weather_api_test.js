@@ -490,7 +490,7 @@ function(err, data) {
   htmlText += "</tr><tr>";
   for(var x=0; x<temps.length; x++){
     var loopDate = new Date(temps[x].date);
-    htmlText += "<td>" + Math.round(temps[x].temp);
+    htmlText += "<td class='temp'>" + Math.round(temps[x].temp);
     //Changing the units ending based on temperature unit selected
     switch (sessionStorage.units) {
       case 'fahrenheit':
