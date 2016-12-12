@@ -1,5 +1,3 @@
-// Get the body
-//var body = docu
 // Get the popup
 var popup = document.getElementById('zipcodePopup');
 
