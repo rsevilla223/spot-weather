@@ -1,6 +1,19 @@
 function locationSettings() {
 	"use strict";
-
+	//store checked radio buttons
+	switch (sessionStorage.units) {
+		case 'fahrenheit':
+	    document.getElementById("c1").checked = true;
+	    break;
+	  case 'celsius':
+	    document.getElementById("c2").checked = true;
+	    break;
+	  case 'kelvin':
+	    document.getElementById("c3").checked = true;
+	    break;
+	  default:
+	    document.getElementById("c1").checked = true;
+}
 	//handle deletion of single note - bind to existing element...
 	$('.location-settings').on("click", ".delete-button" , function(e) {
     //delete parent note
