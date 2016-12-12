@@ -1,3 +1,5 @@
+// Get the body
+//var body = docu
 // Get the popup
 var popup = document.getElementById('zipcodePopup');
 
@@ -10,6 +12,7 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the popup
 updateZip.onclick = function() {
     popup.style.display = "block";
+    document.body.style.overflow = "hidden";
 }
 
 // When the user clicks on <span> (x), close the popup
