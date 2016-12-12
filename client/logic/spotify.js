@@ -28,7 +28,7 @@ var main_forecast = getForecast();
 //%20genre:%22southern%20hip%20hop%22
 
 if (sessionStorage.genre == null) {
-  var genre = "%20genre:%22jazz%22";
+  var genre = "%20genre:%22rock%22";
 }
 
 else {
