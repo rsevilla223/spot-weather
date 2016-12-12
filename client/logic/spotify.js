@@ -28,7 +28,7 @@ var main_forecast = getForecast();
 //%20genre:%22southern%20hip%20hop%22
 
 if (sessionStorage.genre == null) {
-  var genre = "%20genre:%22jazz%22";
+  var genre = "%20genre:%22rock%22";
 }
 
 else {
@@ -76,6 +76,10 @@ var changeGenre = function(genre) {
   $('.dropbtn').html("&#9776 &nbsp; Genre: "+ genre);
   console.log("genre changed to: " + genre);
 }
+
+var changeUnits = function(newunits) {
+  sessionStorage.units = newunits;
+};
 
 var getTrackUrl = function(track_number) {
   var track_url = document.getElementById(""+track_number+"").getAttribute('track_url');
