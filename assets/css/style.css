@@ -665,7 +665,7 @@ th {
 }
 .audio_player {
   margin: auto;
-  max-width: 800px;
+  max-width: 100%;
   min-width: 320px;
   height: 300;
 }
@@ -745,9 +745,9 @@ th {
 /*divs to add separate styling to song title and artist name*/
 .song {
   align: right;
-  display: inline;
+  display: inline-block;
   margin-left: 10px;
-  width: 90%;
+  max-width: 846px;
 }
 .song_title {
   align: right;
@@ -758,11 +758,25 @@ th {
   display: inline;
   font-size: 17px;
 }
-
+@media (max-width: 800px) {
+  .song {
+    width: 85%;
+    font-size: 15px;
+  }
+  .song_title {
+    font-size: 15px;
+  }
+  .artist {
+    font-size: 12px;
+  }
+}
 /*"Listen on spotify" button styling"*/
 .play_spotify {
   float: right;
   margin-right: 5px;
+  margin-top: 0;
+  margin-bottom: auto;
+  display: inline-block;
 }
 .to_spotify {
   width: 158.3px;
@@ -779,9 +793,16 @@ th {
   font-size: 16px;
   margin-left: auto;
   margin-right: 0;
+  margin-top: auto;
+  margin-bottom: auto;
   cursor: pointer;
   border-radius: 5px;
-  display: inline-block;
+}
+@media (max-width: 590px) {
+  .listen {
+    font-size: 12px;
+    padding: 5px 7px;
+  }
 }
 /*end Spotify card styling*/
 /* begin slideout menu */
