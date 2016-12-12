@@ -33,7 +33,7 @@
 
 						<div class="menu_options">
 							<li><a class="active" href="index.html">Home</a></li>
-							<li><a href="my_info.html">My Info</a></li>
+							<li class="updateZip" id="updateZip"><!--<button class=popup>-->Update location<!--</>--></li>
 							<li><a href="settings.html">Settings</a></li>
 						</div>
 					</div>
@@ -44,6 +44,28 @@
 			<!--<li class="home_logo"><a href="#home">WeatherSpot</a></li>-->
 			<a href="index.html"><img class = "home_logo" src="../../media/images/spotweatherlogo.svg"></a>
 		</div>
+
+		<!-- updater zipcode popup -->
+		<div id="zipcodePopup" class="popup">
+
+		  <!-- popup content -->
+		  <div class="popup-content">
+		    <span class="close">&times;</span>
+					<span class="popup-form">
+						<p class="tagline">Enter your zipcode to update your location:</p>
+						<br>
+					<form action="index.html" onsubmit="return validateZip();" method="GET">
+						<input type="text" name="enteredZipcode" class="zipcode"/>
+						<br>
+						<input type="submit" value="Submit" class="zipcodeSubmit"/>
+					</form>
+						<p class="tagline">or</p>
+					<form action="location_services.html" method="GET">
+						<input type="submit" value="Use your location" class="zipcodeSubmit"/>
+					</form>
+				</span>
+		</div>
+	</div>
 
 		<div class="center_info" id="center_info">
 				<div class="weather_container">
@@ -77,6 +99,7 @@
 		<script src="../../client/logic/weather_api_test.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="../../client/logic/sidebar.js"></script>
+		<script src="../../client/logic/update_zipcode_popup.js"></script>
 		<script src="../../client/logic/zipcode_errors.js"></script>
 		<script src="../../client/logic/spotify.js"></script>
 		<script src="../../bower_components/plyr/dist/plyr.js"></script>
