@@ -11,16 +11,28 @@ var span = document.getElementsByClassName("close")[0];
 updateZip.onclick = function() {
     popup.style.display = "block";
     document.body.style.overflow = "hidden";
+  //  document.body.nav.nav-side.style.display= "none";
+    $('.nav-side').addClass('nav-closed'); //close navigation bar when screen clicked
+  //  $('.nav-side .nav-open').style.visibility = "hidden";
+  //  $('.nav-side').style.display = "none";
 }
 
 // When the user clicks on <span> (x), close the popup
 span.onclick = function() {
     popup.style.display = "none";
+    $('.nav-side').removeClass('nav-closed');
+  //  $('.nav-side').toggleClass('nav-open');
+  //  $('.nav-side').toggleClass('nav-toggle');
+  // $('.sidebar').toggleClass('collapsed');
 }
 
 // When the user clicks anywhere outside of the popup, close it
 window.onclick = function(event) {
     if (event.target == popup) {
         popup.style.display = "none";
+        $('.nav-side').removeClass('nav-closed');
+      //  $('.nav-side').toggleClass('nav-open');
+      //  $('.nav-side').toggleClass('nav-toggle');
+      //  $('.sidebar').toggleClass('collapsed');
     }
 }

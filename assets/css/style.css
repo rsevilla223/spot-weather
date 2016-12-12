@@ -873,8 +873,8 @@ th {
   margin-left: 0;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
 }
-.nav-side.nav-closed{
-  display: none;
+.nav-closed{
+  visibility: hidden;
 }
 .nav-toggle {
   position: fixed;
