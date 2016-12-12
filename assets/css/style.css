@@ -4,6 +4,9 @@ body {
 		background-color: #1f2122;
 }
 
+a {
+  text-decoration: none;
+}
 /* background image styling */
 .center_info {
   height: 100vh;
