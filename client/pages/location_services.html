@@ -23,6 +23,7 @@ function errorCallback() {
 function successCallback(position) {
       sessionStorage.latitude = position.coords.latitude;
       sessionStorage.longitude =  position.coords.longitude;
+      sessionStorage.locationmode = "latlong";
       window.location = "index.html";//redirects to main page
     }
 </script>

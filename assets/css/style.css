@@ -621,6 +621,17 @@ th {
 .temp {
   font-size: 25px;
 }
+}
+@media (max-width: 414px) {
+  .daytemps {
+    color: white;
+    font-size: 10px;
+    width: 20px;
+  }
+  .temp {
+    font-size: 20px;
+  }
+}
 /* end 5 day weather display styling */
 }
 /*END WEATHER CARD MEDIA QUERY*/

@@ -13,6 +13,12 @@ var getJSON = function(url, callback) {//just setting up the logic for making AP
     xhr.send();
 };
 
+var callUrl;
+
+var latitude = sessionStorage.latitude;
+var longitude = sessionStorage.longitude;
+var locationmode = sessionStorage.locationmode;
+
 function getUrlVars() {
   var vars = {};
   var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -23,6 +29,8 @@ function getUrlVars() {
 
   function setZipcode(zipcode) {
     sessionStorage.zipcode = zipcode;
+    sessionStorage.locationmode = "zip";
+    locationmode = "zip";
   }
 
   function getZipcode(){
@@ -40,13 +48,10 @@ console.log(prezipcode);
 //setZipcode(prezipcode);
 var zipcode = getZipcode();
 
-var callUrl;
 
-var latitude = sessionStorage.latitude;
-var longitude = sessionStorage.longitude;
-
-if (latitude && longitude){
-  console.log("Using location " + latitude +" "+ longitude);
+console.log("Testing " + latitude +" "+ longitude + " now");
+if (locationmode == "latlong"){
+  console.log("Using location " + latitude +" "+ longitude + " now");
   callUrl = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude;
 }
 else {
